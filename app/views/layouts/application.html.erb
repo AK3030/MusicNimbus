@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Soundcloud</title>
+    <title>Nimbus</title>
     <%= csrf_meta_tags %>
+
+    <%= favicon_link_tag asset_path('cloud_favicon.png'),:rel=>'icon',:type =>'image/png'%>
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
