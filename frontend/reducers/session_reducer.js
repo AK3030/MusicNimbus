@@ -5,7 +5,6 @@ const nullUser = {currentUser:null};
 
 
 export default (state = nullUser, action) => {
-  console.log("action", action);
   Object.freeze(state);
   switch (action.type) {
     case RECEIVE_CURRENT_USER:
