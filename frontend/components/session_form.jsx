@@ -9,6 +9,7 @@ class SessionForm extends React.Component {
       password: ""
     };
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleDemo = this.handleDemo.bind(this);
   }
 
   componentWillReceiveProps(nextProps) {
@@ -19,13 +20,15 @@ class SessionForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
+    console.log(this.state.user);
     const user = Object.assign({}, this.state);
     this.props.processForm({user});
   }
 
   handleDemo(e) {
     e.preventDefault();
-    const user = "hi";
+    const user = {username: "Demo", password: "demopassword123"};
+    this.props.processLogin({user});
   }
 
   update(field) {
@@ -43,7 +46,6 @@ class SessionForm extends React.Component {
   }
 
   renderErrors() {
-    console.log("errors", this.props.errors);
     return (
       <ul>
         {this.props.errors.map((error, i) => (
@@ -87,9 +89,10 @@ class SessionForm extends React.Component {
             </div>
 
             <div id="session-errors">{this.renderErrors()}</div>
-            <input id="session-form-button" type="submit" value={submitValue} />
+            <input className="session-form-button" type="submit" value={submitValue} />
 
           </form>
+          <button className="session-form-button" onClick={this.handleDemo}>Demo Login</button>
         </div>
         <div className="modal-background">
         </div>

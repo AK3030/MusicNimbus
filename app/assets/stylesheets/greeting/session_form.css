@@ -57,7 +57,7 @@
     font-size: 16px;
 }
 
-#session-form-button {
+.session-form-button {
     display: inline-block;
     text-align: center;
     background-color: #f50;

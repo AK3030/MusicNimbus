@@ -26,7 +26,6 @@ export const signup = user => dispatch => (
 export const login = user => dispatch => (
   APIUtil.login(user).then((serverUser) =>
   dispatch(receiveCurrentUser(serverUser)), error => {
-    console.log("hey  - -- - - - -", error);
     return (
       dispatch(receiveErrors(error.responseJSON))
     );
