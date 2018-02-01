@@ -2,6 +2,7 @@ import React from 'react';
 import {Route} from 'react-router-dom';
 import GreetingContainer from './greeting_container';
 import SessionFormContainer from './session_form_container';
+import {AuthRoute} from '../util/route_util.jsx';
 
 const App = () => (
   <div>
@@ -9,8 +10,8 @@ const App = () => (
       <h1>Nimbus</h1>
       <GreetingContainer/>
     </header>
-    <Route path="/signup" component={SessionFormContainer}/>
-    <Route path="/login" component={SessionFormContainer}/>
+    <AuthRoute exact path="/signup" component={SessionFormContainer}/>
+    <AuthRoute exact path="/login" component={SessionFormContainer}/>
 
   </div>
 );
