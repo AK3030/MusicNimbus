@@ -6,7 +6,6 @@ export default (state = [], action) => {
     case RECEIVE_CURRENT_USER:
       return [];
     case RECEIVE_SESSION_ERRORS:
-      console.log("errors_reducer",action.errors);
       return action.errors;
     default:
       return state;
