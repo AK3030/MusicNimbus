@@ -5,7 +5,7 @@ const sessionLinks = () => (
   <div>
     <nav className="header-nav">
       <Link id ="signup" className="session-nav-buttons" to="/signup">Create account</Link>
-      <Link id ="signin"className="session-nav-buttons" to="/login">Sign in</Link>
+      <Link id ="signin" className="session-nav-buttons" to="/login">Sign in</Link>
     </nav>
     <h2 className="welcome">Connect On Nimbus</h2>
     <div className="background"></div>

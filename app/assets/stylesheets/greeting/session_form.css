@@ -9,6 +9,12 @@
     background-color: rgba(250,250,250,.7);
 }
 
+#exit-button {
+  float:right;
+  margin-top: -240px;
+  margin-right: -24px;
+}
+
 
 .session-form-container {
     font-family: "Interstate","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Garuda,Verdana,Tahoma,sans-serif;
