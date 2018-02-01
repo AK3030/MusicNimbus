@@ -1,0 +1,52 @@
+html {
+  background-color: rgba(242, 243, 244,1);
+}
+.welcome {
+  font-size: 24px;
+  font-family: "Interstate","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Garuda,Verdana,Tahoma,sans-serif;
+  color: white;
+  text-align: center;
+  margin-top: 75px;
+}
+
+.header-nav {
+  height:60px;
+}
+.header {
+  width: 1080px;
+  background-color: purple;
+  height: 300px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.session-nav-buttons {
+  float:right;
+  color: white;
+  font-size: 14px;
+  font-family: "Interstate","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Garuda,Verdana,Tahoma,sans-serif;
+  text-decoration: none;
+  padding-right: 15px;
+  padding-left: 15px;
+  padding-top: 3px;
+  padding-bottom:3px;
+  margin-top:20px;
+  border-radius: 3px;
+
+}
+
+
+#signup {
+  margin-left: 10px;
+  margin-right:30px;
+  background-color: #f50;
+  border: 1px solid #f50;
+
+
+
+}
+
+#signin {
+  border: 1px solid white;
+
+}
