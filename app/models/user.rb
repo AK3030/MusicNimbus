@@ -17,9 +17,13 @@ class User < ApplicationRecord
   validates :password, length: { minimum: 6, allow_nil: true }
 
   after_initialize :ensure_session_token
-  after_initialize :ensure_image_url
+  after_initialize :ensure_image_url, :ensure_email
 
   attr_reader :password
+
+  def ensure_email
+    self.email ||= "place holder"
+  end
 
   def ensure_image_url
     self.image_url ||= "place holder"

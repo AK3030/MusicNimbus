@@ -1,26 +1,74 @@
-.header {
-    /* position: fixed;
+.modal-background {
+    position: fixed;
     z-index: 1;
     left: 0;
-    top: 0; */
-    /* width: 100%;
-    height: 100%; */
-    /* overflow: auto; */
-    filter: blur(2px) brightness(0.5);
-    /* background-color: rgb(0,0,0);
-    background-color: rgba(0,0,0,0.5); */
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(250,250,250,.7);
 }
 
 
 .session-form-container {
+    font-family: "Interstate","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Garuda,Verdana,Tahoma,sans-serif;
     position: absolute;
     top: 50px;
     background-color: white;
     left: 50%;
-    padding: 35px;
-    height: 300px;
-    width: 300px;
-    margin-left: -150px;
+    padding-left: 35px;
+    padding-right: 35px;
+    padding-top: 250px;
+    height: 600px;
+    width: 380px;
+    margin-left: -190px;
     background: white;
     z-index: 3;
+    color: #ccc;
+}
+
+.session-form-container #session-errors {
+  color: #f50;
+  font-size: 13px;
+}
+
+.session-mode-change {
+  color: blue;
+  text-decoration: underline;
+  color: #f50;
+  padding-bottom: 20px;
+}
+
+#form-input-container {
+  padding-top:4px;
+}
+
+.session-input {
+    color: black;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding-left: 8px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: white;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    width: 98%;
+    font-size: 16px;
+}
+
+#session-form-button {
+    display: inline-block;
+    text-align: center;
+    background-color: #f50;
+    border: 1px solid #f50;
+    color: white;
+    font-size: 16px;
+    width:100%;
+    margin-top: 10px;
+    padding-top: 10px;
+    padding-bottom:10px;
+    border-radius: 3px;
+
+
 }

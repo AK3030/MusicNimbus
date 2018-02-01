@@ -14,8 +14,8 @@ html {
 }
 .header {
   width: 1080px;
-  background-color: purple;
-  height: 300px;
+  background-color: black;
+  height: 400px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -28,8 +28,8 @@ html {
   text-decoration: none;
   padding-right: 15px;
   padding-left: 15px;
-  padding-top: 3px;
-  padding-bottom:3px;
+  padding-top: 6px;
+  padding-bottom:6px;
   margin-top:20px;
   border-radius: 3px;
 
@@ -41,12 +41,8 @@ html {
   margin-right:30px;
   background-color: #f50;
   border: 1px solid #f50;
-
-
-
 }
 
 #signin {
   border: 1px solid white;
-
 }

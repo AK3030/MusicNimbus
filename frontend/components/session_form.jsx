@@ -20,8 +20,12 @@ class SessionForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const user = Object.assign({}, this.state);
-    console.log("handle submit",user);
     this.props.processForm({user});
+  }
+
+  handleDemo(e) {
+    e.preventDefault();
+    const user = "hi";
   }
 
   update(field) {
@@ -32,9 +36,9 @@ class SessionForm extends React.Component {
 
   navLink() {
     if (this.props.formType === 'login') {
-      return <Link to="/signup">sign up instead</Link>;
+      return <Link className="session-mode-change" to="/signup">sign up instead</Link>;
     } else {
-      return <Link to="/login">log in instead</Link>;
+      return <Link className="session-mode-change" to="/login">log in instead</Link>;
     }
   }
 
@@ -53,30 +57,43 @@ class SessionForm extends React.Component {
 
   render() {
 
-    return (
-    <div className="session-form-container">
-      <form onSubmit={this.handleSubmit} className="session-form-box">
-        {this.props.formType} or {this.navLink()}
-        {this.renderErrors()}
-        <label>Username:
-          <input type="text"
-            value={this.state.username}
-            onChange={this.update('username')}
-            className="session-input"
-          />
-        </label>
-        <br></br>
-        <label>Password:
-          <input type="password"
-            value={this.state.password}
-            onChange={this.update('password')}
-            className="session-input"
-          />
-        </label>
-        <input type="submit" value="Submit" />
+    let submitValue = (this.props.formType === "login") ? "Sign In" : "Sign Up";
 
-      </form>
-    </div>
+    return (
+      <div>
+        <div className="session-form-container">
+          <form onSubmit={this.handleSubmit} className="session-form-box">
+            {this.props.formType} or {this.navLink()}
+            <div id="form-input-container">
+              <label>
+                <input
+                  placeholder="Your Username *"
+                  type="text"
+                  value={this.state.username}
+                  onChange={this.update('username')}
+                  className="session-input"
+                />
+              </label>
+              <br></br>
+              <label>
+                <input
+                  placeholder="Your Password *"
+                  type="password"
+                  value={this.state.password}
+                  onChange={this.update('password')}
+                  className="session-input"
+                />
+              </label>
+            </div>
+
+            <div id="session-errors">{this.renderErrors()}</div>
+            <input id="session-form-button" type="submit" value={submitValue} />
+
+          </form>
+        </div>
+        <div className="modal-background">
+        </div>
+      </div>
   );
   }
 }
