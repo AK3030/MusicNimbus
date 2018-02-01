@@ -23,6 +23,7 @@ html {
 .session-nav-buttons {
   color: white;
   font-size: 14px;
+  float: right;
   font-family: "Interstate","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Garuda,Verdana,Tahoma,sans-serif;
   text-decoration: none;
   padding-right: 15px;
@@ -46,7 +47,7 @@ html {
   border: 1px solid white;
 }
 
-#logout {
+/* #logout {
   margin-left: 30px;
   margin-top: 0px;
-}
+} */
