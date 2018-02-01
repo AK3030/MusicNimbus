@@ -47,7 +47,8 @@ html {
   border: 1px solid white;
 }
 
-/* #logout {
+#logout {
+  float: left;
   margin-left: 30px;
   margin-top: 0px;
-} */
+}
