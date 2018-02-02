@@ -1,6 +1,7 @@
 
 .main-header {
-  background-color: red;
+  background-color: #333;
+
   display:block;
   width: 100%;
 }
@@ -8,7 +9,12 @@
 .main-header a {
 
   display: block;
-  padding:10px 20px;
+  padding-top: 13px;
+  padding-bottom: 15px;
+  padding-left: 18px;
+  padding-right:18px;
+
+
 
 }
 
@@ -20,8 +26,6 @@
   font-family: "Lucida Grande","Lucida Sans Unicode","Lucida Sans",Garuda,Verdana,Tahoma,sans-serif;
   height: 46px;
   font-size: 14px;
-
-
   background-color: #333;
   color:#ccc;
 
@@ -29,7 +33,6 @@
 
 .header-list {
   display:flex;
-  margin-top: 5px;
   font-weight: 30;
 }
 
@@ -43,4 +46,23 @@
 
 #search-form {
   margin-top: 7px;
+}
+
+.test-thing {
+  height: 300px;
+  width: 1240px;
+  background-color: white;
+  margin: 0 auto;
+}
+
+#upgrade-link {
+  color: #f50;
+}
+
+#nimbus-link, #home-link, #collection-link {
+  border-right: 1px solid black;
+}
+
+#nimbus-link {
+  border-left:1px solid black;
 }
