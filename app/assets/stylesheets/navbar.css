@@ -6,7 +6,7 @@
 }
 
 .main-header a {
-  background-color: green;
+
   display: block;
   padding:10px 20px;
 
@@ -17,15 +17,30 @@
   justify-content: space-between;
   margin: 0 auto;
   width: 1240px;
-  font-family: "Interstate","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Garuda,Verdana,Tahoma,sans-serif;
+  font-family: "Lucida Grande","Lucida Sans Unicode","Lucida Sans",Garuda,Verdana,Tahoma,sans-serif;
   height: 46px;
+  font-size: 14px;
 
 
   background-color: #333;
-  color:white;
+  color:#ccc;
 
 }
 
 .header-list {
   display:flex;
+  margin-top: 5px;
+  font-weight: 30;
+}
+
+#search-box {
+  background-color: rgba(242, 243, 244,1);
+  border-radius: 4px;
+  width:500px;
+  height: 30px;
+  padding-left: 5px;
+}
+
+#search-form {
+  margin-top: 7px;
 }
