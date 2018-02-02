@@ -22,6 +22,7 @@ const personalGreeting = (currentUser, logout) => (
 const Greeting= ({currentUser, logout}) => {
   return (
       <div className="header">
+        <div id="orange-banner"></div>
         {currentUser ? personalGreeting(currentUser, logout) : sessionLinks()}
       </div>
 
