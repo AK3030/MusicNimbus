@@ -20,10 +20,12 @@ const personalGreeting = (currentUser, logout) => (
 );
 
 const Greeting= ({currentUser, logout}) => {
+  return (
+      <div className="header">
+        {currentUser ? personalGreeting(currentUser, logout) : sessionLinks()}
+      </div>
 
-
-return (
-  currentUser ? personalGreeting(currentUser, logout) : sessionLinks()
-);};
+  );
+};
 
 export default Greeting;

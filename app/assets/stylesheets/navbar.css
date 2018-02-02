@@ -1,0 +1,31 @@
+
+.main-header {
+  background-color: red;
+  display:block;
+  width: 100%;
+}
+
+.main-header a {
+  background-color: green;
+  display: block;
+  padding:10px 20px;
+
+}
+
+.main-navbar {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  width: 1240px;
+  font-family: "Interstate","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Garuda,Verdana,Tahoma,sans-serif;
+  height: 46px;
+
+
+  background-color: #333;
+  color:white;
+
+}
+
+.header-list {
+  display:flex;
+}
