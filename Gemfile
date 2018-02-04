@@ -32,6 +32,10 @@ gem 'jquery-rails'
 
 gem 'rails_12factor'
 
+gem 'paperclip'
+gem 'aws-sdk', '~>2.3'
+gem 'pry-rails'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
@@ -41,7 +45,6 @@ group :development, :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
-  gem 'pry-rails'
   gem 'binding_of_caller'
   gem 'better_errors'
   gem 'annotate'
