@@ -9,12 +9,12 @@ require 'open-uri'
 #   Character.create(name: 'Luke', movie: movies.first)
 skrillex_image = open('https://i1.sndcdn.com/avatars-000337298392-3leyki-t500x500.jpg')
 skrillex_header_image = open('https://i1.sndcdn.com/visuals-000000856062-15Ew90-t2480x520.jpg')
-User.create(username: "Skrillex", password:"password123", image: skrillex_image, header_image: skrillex_header_image)
+User.create(username: "Skrillex", name: "Sonny Moore", location: "Los Angeles, California", password:"password123", image: skrillex_image, header_image: skrillex_header_image)
 
 ktn_image = open('https://i1.sndcdn.com/avatars-000341853478-ft62x1-t500x500.jpg')
 ktn_header_image = open('https://i1.sndcdn.com/visuals-000000265325-HLuSRT-t1240x260.jpg')
-User.create(username: "Kill The Noise", password:"password123", image: ktn_image, header_image: ktn_header_image)
+User.create(username: "Kill The Noise", name:"kill the noise", location: "Los Angeles, California", password:"password123", image: ktn_image, header_image: ktn_header_image)
 
 future_image = open('https://i1.sndcdn.com/avatars-000296304150-0fh7eq-t500x500.jpg')
 future_header_image = open('https://i1.sndcdn.com/visuals-000007436630-OlyMYZ-t1240x260.jpg')
-User.create(username: "Future", password: "password123", image: future_image, header_image: future_header_image)
+User.create(username: "Future", name:"Future HNDRXX", location: "Atlanta, United States",password: "password123", image: future_image, header_image: future_header_image)
