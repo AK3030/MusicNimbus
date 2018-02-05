@@ -46,4 +46,18 @@
   margin-left: 20px;
 }
 
+#user-page {
+  width: 1240px;
+  height: 500px;
+  background-color: orange;
+  margin: 0 auto;
+}
+
+#user-nav {
+  width: 1100;
+  height: 50px;
+  background-color: white;
+  margin-top: 20px;
+}
+
 /* https://s3-us-west-1.amazonaws.com/musicnimbus/users/images/000/000/002/original/30_owsla_live.jpg */

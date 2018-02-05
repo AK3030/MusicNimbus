@@ -17,7 +17,7 @@ class Basic extends React.Component {
   render() {
     return (
       <section>
-      <div className="dropzone">
+      <div>
         <Dropzone onDrop={this.onDrop.bind(this)}>
           <p>Try dropping some files here, or click to select files to upload.</p>
         </Dropzone>
