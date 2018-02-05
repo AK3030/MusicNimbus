@@ -1,0 +1,48 @@
+#user-header {
+  height: 260px;
+  width: 1240px;
+  background-color: white;
+  margin: 0 auto;
+  overflow:hidden;
+  background-size: 100%;
+  display: flex;
+  padding-top: 30px;
+  padding-left: 22px;
+    -moz-box-sizing:border-box;
+    -webkit-box-sizing:border-box;
+    box-sizing:border-box;
+}
+
+#username {
+  display:table;
+  background-color: rgba(0,0,0,.8);
+  color:white;
+  padding: 10px 7px;
+  font-family: "Interstate","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Garuda,Verdana,Tahoma,sans-serif;
+  font-size: 21px;
+  margin-bottom: 5px;
+  font-weight: 100;
+}
+
+#name, #location {
+  display:table;
+  background-color: rgba(0,0,0,.8);
+  color:#ccc;
+  padding: 4px 7px;
+  font-family: "Interstate","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Garuda,Verdana,Tahoma,sans-serif;
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+#profile-image-container {
+  background-color: white;
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+}
+
+#profile-info-container {
+  margin-left: 20px;
+}
+
+/* https://s3-us-west-1.amazonaws.com/musicnimbus/users/images/000/000/002/original/30_owsla_live.jpg */

@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const NavBar = ({currentUser}) => {
+  console.log(currentUser);
   return (
     <div>
       <header className="main-header">
@@ -17,11 +18,10 @@ const NavBar = ({currentUser}) => {
           <ul className="header-list">
             <li><a id="upgrade-link" href="#/navbar">Upgrade</a></li>
             <li><a href="#/navbar">Upload</a></li>
-            <li><a href="#/navbar">Alex Kite</a></li>
+            <li><a href="#/navbar">{currentUser.username}</a></li>
           </ul>
         </nav>
       </header>
-      <div class="test-thing"></div>
     </div>
 
   );
