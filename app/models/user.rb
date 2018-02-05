@@ -2,18 +2,23 @@
 #
 # Table name: users
 #
-#  id                 :integer          not null, primary key
-#  username           :string           not null
-#  password_digest    :string           not null
-#  session_token      :string           not null
-#  email              :string           not null
-#  image_url          :string           not null
-#  created_at         :datetime         not null
-#  updated_at         :datetime         not null
-#  image_file_name    :string
-#  image_content_type :string
-#  image_file_size    :integer
-#  image_updated_at   :datetime
+#  id                        :integer          not null, primary key
+#  username                  :string           not null
+#  password_digest           :string           not null
+#  session_token             :string           not null
+#  email                     :string           not null
+#  created_at                :datetime         not null
+#  updated_at                :datetime         not null
+#  image_file_name           :string
+#  image_content_type        :string
+#  image_file_size           :integer
+#  image_updated_at          :datetime
+#  header_image_file_name    :string
+#  header_image_content_type :string
+#  header_image_file_size    :integer
+#  header_image_updated_at   :datetime
+#  location                  :string
+#  name                      :string
 #
 
 class User < ApplicationRecord
@@ -24,18 +29,16 @@ class User < ApplicationRecord
   has_attached_file :image, styles: { medium: "300x300>", thumb: "100x100>" }, default_url: "/images/:style/missing.png"
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
 
+  has_attached_file :header_image, styles: { medium: "300x300>", thumb: "100x100>" }, default_url: "/images/:style/missing.png"
+  validates_attachment_content_type :header_image, content_type: /\Aimage\/.*\z/
 
   after_initialize :ensure_session_token
-  after_initialize :ensure_image_url, :ensure_email
+  after_initialize  :ensure_email
 
   attr_reader :password
 
   def ensure_email
     self.email ||= "place holder"
-  end
-
-  def ensure_image_url
-    self.image_url ||= "place holder"
   end
 
   def password=(password)

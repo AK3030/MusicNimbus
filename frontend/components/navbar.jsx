@@ -2,7 +2,11 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const NavBar = ({currentUser}) => {
-  console.log(currentUser);
+
+  var username = "Log In";
+  if (currentUser) {
+    username = currentUser.username;
+  }
   return (
     <div>
       <header className="main-header">
@@ -18,7 +22,7 @@ const NavBar = ({currentUser}) => {
           <ul className="header-list">
             <li><a id="upgrade-link" href="#/navbar">Upgrade</a></li>
             <li><a href="#/navbar">Upload</a></li>
-            <li><a href="#/navbar">{currentUser.username}</a></li>
+            <li><a href="#/navbar">{username}</a></li>
           </ul>
         </nav>
       </header>

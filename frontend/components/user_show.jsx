@@ -14,7 +14,12 @@ class UserShow extends React.Component {
     image = image.slice(4, image.length-1);
 
     var userHeaderStyle = {
-      backgroundImage: 'url(https://s3-us-west-1'+ image +')',
+      // backgroundImage: 'url(https://s3-us-west-1'+ image +')',
+      backgroundImage: "url('https://i1.sndcdn.com/visuals-000011797934-T9KDoD-t2480x520.jpg')"
+    };
+
+    var userImageStyle = {
+      backgroundImage: "url('https://i1.sndcdn.com/avatars-000046398941-0y0cfi-t500x500.jpg')"
     };
 
 
@@ -22,9 +27,9 @@ class UserShow extends React.Component {
     return (
       <div>
         <div style={userHeaderStyle} id="user-header">
-          <div id="profile-image-container"></div>
+          <div style={userImageStyle} id="profile-image-container"></div>
           <div id="profile-info-container">
-            <div id="username">Skrillex</div>
+            <div id="username">OWSLA</div>
             <div id="name">Sonny Moore</div>
             <div id="location">Los Angeles, United States</div>
           </div>
