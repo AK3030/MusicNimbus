@@ -1,0 +1,21 @@
+.profile-image-section {
+  color: white;
+  font-family: "Lucida Grande","Lucida Sans Unicode","Lucida Sans",Garuda,Verdana,Tahoma,sans-serif;
+  font-size:14px;
+}
+
+.profile-image-dropzone {
+  border-radius: 50%;
+  height: 200px;
+  width: 200px,
+  color: white,
+}
+
+.aside {
+  display:flex;
+  margin-top: -38px;
+}
+
+.accepted-files {
+  color: rgb(11,220,108);
+}

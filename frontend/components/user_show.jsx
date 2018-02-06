@@ -1,7 +1,7 @@
 import React from 'react';
 import linkCleaner from '../util/aws_link_cleaner';
 import Dropzone from 'react-dropzone';
-import Basic from './dropzone_test';
+import ProfileDropzone from './profile_dropzone';
 
 class UserShow extends React.Component {
   componentDidMount() {
@@ -15,7 +15,7 @@ class UserShow extends React.Component {
   }
 
   render () {
-
+    console.log(this.props);
     if (!this.props.user) {
       return (<div>loading</div>);
     }
@@ -37,7 +37,7 @@ class UserShow extends React.Component {
       <div>
         <div style={userHeaderStyle} id="user-header">
           <div style={userImageStyle} id="profile-image-container">
-            <Basic/>
+            <ProfileDropzone props={{image_type: "profile"}}/>
           </div>
           <div id="profile-info-container">
             <div id="username">{this.props.user.username}</div>
