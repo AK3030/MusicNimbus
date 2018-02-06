@@ -5,6 +5,8 @@ import Root from './components/root';
 
 import {fetchUser} from './actions/user_actions';
 
+import {updateUser} from './actions/user_actions';
+
 
 document.addEventListener('DOMContentLoaded', () => {
   let store;
@@ -17,6 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   window.fetchUser = fetchUser;
   window.store=store;
+  window.updateUser = updateUser;
 
   const root = document.getElementById('root');
   ReactDOM.render(<Root store={ store }/>, root);

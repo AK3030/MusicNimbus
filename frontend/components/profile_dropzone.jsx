@@ -5,45 +5,32 @@ import * as APIUtil from '../util/file_upload_api_util';
 class ProfileDropzone extends React.Component {
   constructor(props) {
     super(props);
-    // console.log(this.props);
+
     this.state = {
       accepted: [],
       rejected: []
     };
+
   }
 
 
   onDrop(accepted, rejected) {
     this.setState({ accepted, rejected });
     if (accepted[0]) {
-      console.log(accepted[0]);
       var g = accepted[0];
       const reader = new FileReader();
-      window.g = g;
+
       reader.onload = () => {
-        const fileAsBinaryString = reader.result;
-        // console.log(fileAsBinaryString);
         var formData = new FormData();
-        formData.append("image[image]", g);
-        $.ajax({
-          url: 'api/users/',
-          method: 'POST',
-          data: formData,
-          contentType: false,
-          processData: false,
-        });
+        formData.append(`user[${this.props.imageType}]`, g);
+        window.formData = formData;
+        this.props.updateUser(this.props.currentUser.id, formData);
       };
       reader.onabort = () => console.log('file reading was aborted');
       reader.onerror = () => console.log('file reading has failed');
 
       reader.readAsBinaryString(g);
-      // $.ajax({
-      //   url: 'api/users/1',
-      //   method: 'PATCH',
-      //   data: {result},
-      //   contentType: false,
-      //   processData: false,
-      // });
+
     }
 
 

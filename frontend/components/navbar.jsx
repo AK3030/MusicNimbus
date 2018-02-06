@@ -4,9 +4,13 @@ import { Link } from 'react-router-dom';
 const NavBar = ({currentUser}) => {
 
   var username = "Log In";
+  var link = `#/`;
   if (currentUser) {
     username = currentUser.username;
+    link = `#/users/${currentUser.id}`;
   }
+
+
   return (
     <div>
       <header className="main-header">
@@ -22,7 +26,7 @@ const NavBar = ({currentUser}) => {
           <ul className="header-list">
             <li><a id="upgrade-link" href="#/navbar">Upgrade</a></li>
             <li><a href="#/navbar">Upload</a></li>
-            <li><a href="#/navbar">{username}</a></li>
+            <li><a href={link}>{username}</a></li>
           </ul>
         </nav>
       </header>

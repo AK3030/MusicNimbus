@@ -4,9 +4,9 @@ import { withRouter } from 'react-router';
 import { fetchUser } from '../actions/user_actions';
 
 const mapStateToProps = (state, ownProps) => {
-  // console.log(ownProps);
   return {
-    user: state.users[ownProps.match.params.userId]
+    user: state.users[ownProps.match.params.userId],
+    currentUser: state.session.currentUser
   };
 };
 

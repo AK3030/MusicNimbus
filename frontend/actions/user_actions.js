@@ -24,7 +24,11 @@ const receiveErrors = (errors) => ({
   errors
 });
 
-
+export const updateUser = (id, userInfo) => dispatch => {
+  APIUtil.updateUser(id, userInfo).then((user) => dispatch(receiveUser(user))), error => (
+    dispatch(receiveErrors(error.responseJSON))
+  );
+};
 
 export const fetchUser = userId => dispatch => {
   APIUtil.fetchUser(userId).then((user) => dispatch(receiveUser(user))),error => (

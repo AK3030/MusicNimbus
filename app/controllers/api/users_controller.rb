@@ -1,11 +1,5 @@
 class Api::UsersController < ApplicationController
   def create
-    # p "helloo -- - -- - -- - "
-    # p params[:image][:image]
-    # @user = User.first
-    # @user.image = params[:image][:image]
-    # @user.save
-    # p User.first.image.url
     @user = User.new(username: user_params[:username], password:user_params[:password], email:user_params[:email])
     if @user.save
       login(@user)
@@ -22,11 +16,13 @@ class Api::UsersController < ApplicationController
   end
 
   def update
-    # p " - - - --- - - -- -- - -- - -- - -"
-    # p params
-    # @user = User.find_by(id: 2)
-    # @user.update_attributes(image: params)
-
+    # if (params[:id] == current_user.id)
+      @user = User.find_by(id: params[:id])
+      @user.update(user_params)
+      render :show
+    # else
+    #   render json: ["wrong user"], status: 404
+    # end
   end
 
   def index

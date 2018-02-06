@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import { login, signup, clearSessionErrors } from '../actions/session_actions';
 import SessionForm from './session_form';
+import {withRouter} from 'react-router';
 
 const mapStateToProps = ({errors, currentUser}, ownProps) => {
   // currentuser doesnt work needs to be deleted!!
@@ -23,4 +24,4 @@ const mapDispatchToProps = (dispatch, {location}) => {
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(SessionForm);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(SessionForm));
