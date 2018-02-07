@@ -93,7 +93,7 @@ class EditUserForm extends React.Component {
                 <input
                   placeholder="Your Name *"
                   type="text"
-                  value={this.state.password}
+                  value={this.state.name}
                   onChange={this.update('name')}
                   className="session-input"
                 />
@@ -103,7 +103,7 @@ class EditUserForm extends React.Component {
                 <input
                   placeholder="Your Location *"
                   type="text"
-                  value={this.state.password}
+                  value={this.state.location}
                   onChange={this.update('location')}
                   className="session-input"
                 />
