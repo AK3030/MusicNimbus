@@ -8,6 +8,7 @@ import NavBar from './navbar';
 import NavbarContainer from './navbar_container';
 import UserShowContainer from './user_show_container';
 import EditUserFormContainer from './edit_user_form_container';
+import UserTrackIndexContainer from './user_track_index_container';
 
 const App = () => (
   <div className="main">

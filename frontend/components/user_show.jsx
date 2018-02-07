@@ -3,6 +3,7 @@ import linkCleaner from '../util/aws_link_cleaner';
 import Dropzone from 'react-dropzone';
 // import ProfileDropzone from './profile_dropzone';
 import ProfileDropzoneContainer from './profile_dropzone_container';
+import UserTrackIndexContainer from './user_track_index_container';
 
 
 class UserShow extends React.Component {
@@ -66,6 +67,7 @@ class UserShow extends React.Component {
               {edit_button}
             </ul>
           </nav>
+          <UserTrackIndexContainer payload={this.props.match.params}/>
         </div>
 
       </div>
