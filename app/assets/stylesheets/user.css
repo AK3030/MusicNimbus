@@ -1,3 +1,7 @@
+body {
+    font-family: "Interstate","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Garuda,Verdana,Tahoma,sans-serif;
+}
+
 #user-header {
   height: 260px;
   width: 1240px;
@@ -18,7 +22,7 @@
   background-color: rgba(0,0,0,.8);
   color:white;
   padding: 10px 7px;
-  font-family: "Interstate","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Garuda,Verdana,Tahoma,sans-serif;
+
   font-size: 21px;
   margin-bottom: 5px;
   font-weight: 100;
@@ -43,21 +47,54 @@
 }
 
 #profile-info-container {
+  display:block;
   margin-left: 20px;
+  width: 500px;
+  white-space: nowrap;
 }
 
 #user-page {
-  width: 1240px;
+  display: block;
+  width: 1200px;
   height: 500px;
-  background-color: orange;
+  /* background-color: orange; */
   margin: 0 auto;
+  background-color: white;
+  padding-top: 17px;
+  padding-left: 20px;
+  padding-right: 20px;
+  font-family: "Interstate","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Garuda,Verdana,Tahoma,sans-serif;
 }
 
 #user-nav {
+  font-family: "Interstate","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Garuda,Verdana,Tahoma,sans-serif;
+  display: flex;
+  justify-content: space-between;
   width: 1100;
-  height: 50px;
-  background-color: white;
-  margin-top: 20px;
+  height: 30px;
+
+  border-bottom: 1px solid #f2f2f2;
+}
+
+#user-nav-left {
+  display: flex;
+  font-family: "Interstate","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Garuda,Verdana,Tahoma,sans-serif;
+  font-size: 17px;
+  margin-right: 21px;
+  padding-bottom: 5px;
+  padding-top: 5px;
+
+
+}
+
+#active {
+  border-bottom: 1px solid #f50;
+  padding-bottom: 25px;
+  color: #f50;
+}
+
+#user-nav-left li {
+  margin-right: 30px;
 }
 
 /* https://s3-us-west-1.amazonaws.com/musicnimbus/users/images/000/000/002/original/30_owsla_live.jpg */

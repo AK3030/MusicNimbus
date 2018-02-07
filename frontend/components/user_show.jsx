@@ -35,7 +35,7 @@ class UserShow extends React.Component {
     };
 
     var dropzone = (this.props.currentUser.id == this.props.match.params.userId) ? <ProfileDropzoneContainer imageType={"image"} /> : null;
-
+    var header_dropzone = (this.props.currentUser.id == this.props.match.params.userId) ? <ProfileDropzoneContainer imageType={"header_image"} /> : null;
     return (
       <div>
         <div style={userHeaderStyle} id="user-header">
@@ -47,10 +47,23 @@ class UserShow extends React.Component {
             <div id="name">{this.props.user.name}</div>
             <div id="location">{this.props.user.location}</div>
           </div>
+          {header_dropzone}
         </div>
 
+
         <div id="user-page">
-          <nav id="user-nav"></nav>
+          <nav id="user-nav">
+            <ul id="user-nav-left">
+              <li id="active">All</li>
+              <li>Tracks</li>
+              <li>Albums</li>
+              <li>Playlists</li>
+              <li>Reposts</li>
+            </ul>
+            <ul id="user-nav-right">
+              <li>edit</li>
+            </ul>
+          </nav>
         </div>
 
       </div>
