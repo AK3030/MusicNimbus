@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 
 class EditUserForm extends React.Component {
   constructor(props) {
-    console.log("hello");
     super(props);
     this.state = {
       username: this.props.currentUser.username,
@@ -23,8 +22,6 @@ class EditUserForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const user = Object.assign({}, this.state);
-    console.log(this.props);
-    console.log(user);
     const reader = new FileReader();
     var formData = new FormData();
     formData.append("user[username]", this.state.username);
@@ -40,7 +37,6 @@ class EditUserForm extends React.Component {
   }
 
   update(field) {
-    console.log(this.state);
     return e => this.setState({
       [field]: e.currentTarget.value
     });
@@ -69,7 +65,6 @@ class EditUserForm extends React.Component {
 
   render() {
 
-    console.log(this.props.currentUser);
     var link = `/users/${this.props.currentUser.id}`;
     return (
       <div>

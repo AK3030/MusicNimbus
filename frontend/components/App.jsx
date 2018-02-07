@@ -20,8 +20,6 @@ const App = () => (
 
     <Switch>
       <Route exact path="/" component={GreetingContainer}/>
-      {console.log("hi")}
-      {console.log("hello")}
       <AuthRoute exact path="/signup" component={SessionFormContainer}/>
       <AuthRoute exact path="/login" component={SessionFormContainer}/>
       <Route exact path="/users/:userId" component={UserShowContainer}/>

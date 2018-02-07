@@ -21,7 +21,6 @@ class UserShow extends React.Component {
     if (!this.props.user) {
       return (<div>loading</div>);
     }
-    console.log(this.props);
 
     var image = linkCleaner(this.props.user.image);
     var header_image = linkCleaner(this.props.user.header_image);
@@ -37,7 +36,6 @@ class UserShow extends React.Component {
     var dropzone = (this.props.currentUser.id == this.props.match.params.userId) ? <ProfileDropzoneContainer imageType={"image"} /> : null;
     var header_dropzone = (this.props.currentUser.id == this.props.match.params.userId) ? <ProfileDropzoneContainer imageType={"header_image"} /> : null;
 
-    console.log("current user", this.props.currentUser);
     var editLink = `#/users/${this.props.match.params.userId}/edit`;
     var edit_button = (this.props.currentUser.id == this.props.match.params.userId) ? <a href={editLink}><li className="edit">Edit</li></a> : null;
     return (

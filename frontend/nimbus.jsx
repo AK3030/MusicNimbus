@@ -3,10 +3,7 @@ import ReactDOM from 'react-dom';
 import configureStore from './store/store';
 import Root from './components/root';
 
-import {fetchUser} from './actions/user_actions';
-
-import {updateUser} from './actions/user_actions';
-
+import {fetchTrack, fetchAllTracks} from './actions/track_actions';
 
 document.addEventListener('DOMContentLoaded', () => {
   let store;
@@ -17,9 +14,9 @@ document.addEventListener('DOMContentLoaded', () => {
   } else {
     store = configureStore();
   }
-  window.fetchUser = fetchUser;
+  window.fetchTrack = fetchTrack;
+  window.fetchAllTracks = fetchAllTracks;
   window.store=store;
-  window.updateUser = updateUser;
 
   const root = document.getElementById('root');
   ReactDOM.render(<Root store={ store }/>, root);
