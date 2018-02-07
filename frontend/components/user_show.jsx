@@ -36,6 +36,8 @@ class UserShow extends React.Component {
 
     var dropzone = (this.props.currentUser.id == this.props.match.params.userId) ? <ProfileDropzoneContainer imageType={"image"} /> : null;
     var header_dropzone = (this.props.currentUser.id == this.props.match.params.userId) ? <ProfileDropzoneContainer imageType={"header_image"} /> : null;
+
+    var editLink = `#/users/${this.props.match.params.userId}/edit`;
     return (
       <div>
         <div style={userHeaderStyle} id="user-header">
@@ -61,7 +63,7 @@ class UserShow extends React.Component {
               <li>Reposts</li>
             </ul>
             <ul id="user-nav-right">
-              <li>edit</li>
+              <a href={editLink}><li className="edit">Edit</li></a>
             </ul>
           </nav>
         </div>
