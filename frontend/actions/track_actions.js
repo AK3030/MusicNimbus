@@ -36,3 +36,12 @@ export const fetchAllTracks = () => dispatch => (
     );
   })
 );
+
+export const fetchUserTracks = (userId) => dispatch => (
+  APIUtil.fetchUserTracks(userId).then((serverTracks) =>
+  dispatch(receiveTracks(serverTracks)), error => {
+    return (
+      dispatch(receiveTrackErrors(error.responseJSON))
+    );
+  })
+);

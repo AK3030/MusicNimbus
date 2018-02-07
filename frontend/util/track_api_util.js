@@ -11,3 +11,10 @@ export const fetchAllTracks = () => {
     method: 'GET'
   });
 };
+
+export const fetchUserTracks = (userId) => {
+  return $.ajax({
+    url: `/api/users/${userId}/tracks`,
+    method: 'GET'
+  });
+};

@@ -27,6 +27,11 @@ class Track < ApplicationRecord
   has_attached_file :audio
   validates_attachment_content_type :audio, :content_type => [ 'audio/mpeg', 'audio/x-mpeg', 'audio/mp3', 'audio/x-mp3', 'audio/mpeg3', 'audio/x-mpeg3', 'audio/mpg', 'audio/x-mpg', 'audio/x-mpegaudio' ]
 
-  belongs_to :User
+  belongs_to :user
+
+  def self.get_tracks_by_user_id(user_id)
+    Track.where(user_id: user_id)
+
+  end
 
 end
