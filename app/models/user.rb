@@ -33,7 +33,7 @@ class User < ApplicationRecord
   validates_attachment_content_type :header_image, content_type: /\Aimage\/.*\z/
 
   after_initialize :ensure_session_token
-  after_initialize  :ensure_email
+  after_initialize :ensure_email
 
   attr_reader :password
 

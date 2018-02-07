@@ -1,0 +1,31 @@
+# == Schema Information
+#
+# Table name: tracks
+#
+#  id                 :integer          not null, primary key
+#  track_name         :string           not null
+#  user_id            :integer          not null
+#  description        :text
+#  created_at         :datetime         not null
+#  updated_at         :datetime         not null
+#  image_file_name    :string
+#  image_content_type :string
+#  image_file_size    :integer
+#  image_updated_at   :datetime
+#  audio_file_name    :string
+#  audio_content_type :string
+#  audio_file_size    :integer
+#  audio_updated_at   :datetime
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  track_name: MyString
+  user_id: 1
+  description: MyText
+
+two:
+  track_name: MyString
+  user_id: 1
+  description: MyText
