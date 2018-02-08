@@ -1,0 +1,23 @@
+.track-item-image {
+  width:160px;
+  height: 160px;
+}
+
+.track-index-item {
+  display: flex;
+}
+
+.track-item-div {
+  height: 150px;
+  display: flex;
+  background-color: blue;
+  flex-direction: column;
+}
+
+.user-track-index {
+  /* background-color: green; */
+  height: 1000px;
+  width: 850px;
+  border-right: 1px solid #f2f2f2;
+  margin-top: 20px;
+}

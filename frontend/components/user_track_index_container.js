@@ -2,9 +2,10 @@ import { connect } from 'react-redux';
 import UserTrackIndex from './user_track_index';
 import { fetchUserTracks } from '../actions/track_actions';
 
-const mapStateToProps = state => {
+const mapStateToProps = (state, ownProps) => {
   return {
-    tracks: Object.keys(state.tracks).map(id => state.tracks[id])
+    tracks: Object.keys(state.tracks).map(id => state.tracks[id]),
+    user: state.users[ownProps.payload.userId]
   };
 };
 

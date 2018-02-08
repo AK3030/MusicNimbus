@@ -12,13 +12,15 @@ class UserTrackIndex extends React.Component {
       return null;
     }
     return (
-      <ul>
-      {
-      this.props.tracks.map( track => {
-        return <TrackIndexItem key={track.id} track={track}/>;
-      })
-      }
-    </ul>
+      <div className="user-track-index">
+        <ul>
+        {
+        this.props.tracks.map( track => {
+          return <TrackIndexItem key={track.id} track={track} trackartist={this.props.user.username}/>;
+        })
+        }
+        </ul>
+      </div>
     );
   }
 }
