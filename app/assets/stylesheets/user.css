@@ -87,6 +87,14 @@ body {
 
 }
 
+#user-nav-right {
+  display: flex;
+}
+
+#user-nav-right li {
+  margin-left: 15px;
+}
+
 #active {
   border-bottom: 1px solid #f50;
   padding-bottom: 25px;
@@ -124,4 +132,9 @@ body {
   background-position-x: -2px;
   background-repeat: no-repeat;
   background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTciIGhlaWdodD0iMTciIHZpZXdCb3g9IjAgMCAxNyAxNyIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48dGl0bGU+ZWRpdDwvdGl0bGU+PHBhdGggZD0iTTExLjYwNyAyTDMuMTIgMTAuNDg1bC0uNzA3IDMuNTM2IDMuNTM2LS43MDcgOC40ODUtOC40ODZMMTEuNjA3IDJ6bTAgMS40MTRsLTcuMDcxIDcuMDcxLjcwNy43MDcgNy4wNy03LjA3LS43MDYtLjcwOHoiIGZpbGw9IiMyMjIiIGZpbGwtcnVsZT0iZXZlbm9kZCIvPjwvc3ZnPg==)
+}
+
+.track-image-preview {
+  width: 60px;
+
 }

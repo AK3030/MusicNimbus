@@ -29,11 +29,9 @@ class ProfileDropzone extends React.Component {
       reader.onerror = () => console.log('file reading has failed');
 
       reader.readAsBinaryString(g);
-
     }
-
-
   }
+
 
   render() {
     var profileDropzoneStyle = {
@@ -63,7 +61,7 @@ class ProfileDropzone extends React.Component {
         height: '260px',
         width: '909px',
         marginTop:'-30px',
-        
+
       };
       profileActiveStyle = {
         backgroundColor: 'rgba(0,0,0,.5)',

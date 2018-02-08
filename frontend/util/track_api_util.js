@@ -18,3 +18,13 @@ export const fetchUserTracks = (userId) => {
     method: 'GET'
   });
 };
+
+export const uploadTrack = (track) => {
+  return $.ajax({
+    url: `api/tracks`,
+    method: 'POST',
+    data: track,
+    contentType: false,
+    processData: false,
+  });
+};

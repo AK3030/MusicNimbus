@@ -38,7 +38,9 @@ class UserShow extends React.Component {
     var header_dropzone = (this.props.currentUser.id == this.props.match.params.userId) ? <ProfileDropzoneContainer imageType={"header_image"} /> : null;
 
     var editLink = `#/users/${this.props.match.params.userId}/edit`;
-    var edit_button = (this.props.currentUser.id == this.props.match.params.userId) ? <a href={editLink}><li className="edit">Edit</li></a> : null;
+    var uploadSong = `#/users/${this.props.match.params.userId}/uploadSong`;
+    var edit_button = (this.props.currentUser.id == this.props.match.params.userId) ? <a href={editLink}><div className="edit">Edit</div></a> : null;
+    var upload_song_button = (this.props.currentUser.id == this.props.match.params.userId) ? <a href={uploadSong}><div className="edit">Upload Song</div></a> : null;
     return (
       <div>
         <div style={userHeaderStyle} id="user-header">
@@ -64,7 +66,8 @@ class UserShow extends React.Component {
               <li>Reposts</li>
             </ul>
             <ul id="user-nav-right">
-              {edit_button}
+              <li>{edit_button}</li>
+              <li>{upload_song_button}</li>
             </ul>
           </nav>
           <UserTrackIndexContainer payload={this.props.match.params}/>

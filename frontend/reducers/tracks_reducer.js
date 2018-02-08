@@ -7,8 +7,10 @@ export default (oldState = {}, action) => {
   Object.freeze(oldState);
   switch (action.type) {
     case RECEIVE_TRACK:
+
       const track = action.track;
-      return merge({}, {[track.id]: track});
+      console.log(track);
+      return merge({}, oldState, {[track.id]: track});
     case RECEIVE_TRACKS:
       return merge({}, action.tracks);
     default:

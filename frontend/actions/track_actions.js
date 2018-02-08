@@ -45,3 +45,12 @@ export const fetchUserTracks = (userId) => dispatch => (
     );
   })
 );
+
+export const uploadTrack = track => dispatch => (
+  APIUtil.uploadTrack(track).then((serverTrack) =>
+  dispatch(receiveTrack(serverTrack)), error => {
+    return (
+      dispatch(receiveTrackErrors(error.responseJSON))
+    );
+  })
+);

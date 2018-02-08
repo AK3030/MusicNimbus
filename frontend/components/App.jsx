@@ -9,6 +9,7 @@ import NavbarContainer from './navbar_container';
 import UserShowContainer from './user_show_container';
 import EditUserFormContainer from './edit_user_form_container';
 import UserTrackIndexContainer from './user_track_index_container';
+import UploadSongFormContainer from './upload_song_form_container';
 
 const App = () => (
   <div className="main">
@@ -16,15 +17,17 @@ const App = () => (
     <Route exact path="/login" component={GreetingContainer}/>
     <Route path="/users/:userId" component={NavbarContainer}/>
     <Route exact path="/users/:userId/edit" component={UserShowContainer}/>
-
+    <Route exact path="/users/:userId/uploadSong" component={UserShowContainer}/>
 
 
     <Switch>
+      <Route exact path="/uploadsongtest" component={UploadSongFormContainer}/>
       <Route exact path="/" component={GreetingContainer}/>
       <AuthRoute exact path="/signup" component={SessionFormContainer}/>
       <AuthRoute exact path="/login" component={SessionFormContainer}/>
       <Route exact path="/users/:userId" component={UserShowContainer}/>
       <Route exact path="/users/:userId/edit" component={EditUserFormContainer}/>
+      <Route exact path="/users/:userId/uploadSong" component={UploadSongFormContainer}/>
       <Redirect to="/" />
     </Switch>
   </div>

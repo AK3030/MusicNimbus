@@ -42,14 +42,6 @@ class EditUserForm extends React.Component {
     });
   }
 
-  navLink() {
-    if (this.props.formType === 'login') {
-      return <Link onClick={this.props.clearErrors} className="session-mode-change" to="/signup">sign up instead</Link>;
-    } else {
-      return <Link onClick={this.props.clearErrors} className="session-mode-change" to="/login">log in instead</Link>;
-    }
-  }
-
   renderErrors() {
     return (
       // <ul>
@@ -59,7 +51,7 @@ class EditUserForm extends React.Component {
       //     </li>
       //   ))}
       // </ul>
-      <div>hi</div>
+      <div></div>
     );
   }
 
@@ -72,7 +64,7 @@ class EditUserForm extends React.Component {
         <div className="session-form-container">
           <Link to={link} id="exit-button">X</Link>
           <form onSubmit={this.handleSubmit} className="session-form-box">
-            {this.props.formType} or {this.navLink()}
+
             <div id="form-input-container">
               <label>
                 <input
