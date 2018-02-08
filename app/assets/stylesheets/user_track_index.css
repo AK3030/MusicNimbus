@@ -5,6 +5,8 @@
 
 .track-index-item {
   display: flex;
+  /* background-color: green; */
+  margin-bottom: 45px;
 }
 
 .track-info-div {
