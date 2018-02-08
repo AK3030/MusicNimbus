@@ -27,8 +27,14 @@ flume_header_image = open('https://va.sndcdn.com/bg/soundcloud:users:2976616/Sou
 flume = User.create(username: "Flume", name:"Future HNDRXX", location: "Sydney, Australia",
   password: "password123", image: flume_image, header_image: flume_header_image)
 
-flume_song_pic = open('https://i1.sndcdn.com/artworks-cKPSyPfpNAhM-0-t500x500.jpg')
-tuna_melt_audio = open('https://s3-us-west-1.amazonaws.com/musicnimbus/tracks/audios/000/000/003/original/Tuna_Melt.mp3')
-Track.create(track_name: 'Sintra', image: flume_song_pic, user: flume, audio: tuna_melt_audio)
+tennis_court_pic = open('https://i1.sndcdn.com/artworks-000077403039-k956ck-t200x200.jpg')
+tennis_court_audio = open("https://s3-us-west-1.amazonaws.com/musicnimbus/Tennis+Court+(Flume+Remix).mp3")
+Track.create(track_name: 'Lorde - Tennis Court (Flume Remix)', image: tennis_court_pic, user: flume, audio: tennis_court_audio)
 
-Track.create(track_name: 'Thing', image: flume_song_pic, user: skrillex, audio: tuna_melt_audio)
+sintra_pic = open('https://i1.sndcdn.com/artworks-000041237346-kwv1b7-t200x200.jpg')
+sintra_audio = open('https://s3-us-west-1.amazonaws.com/musicnimbus/Sintra.mp3')
+Track.create(track_name: 'Sintra', image: sintra_pic, user: flume, audio: sintra_audio)
+
+younme_pic = open('https://i1.sndcdn.com/artworks-000050305011-e8ynd4-t200x200.jpg')
+younme_audio = open('https://s3-us-west-1.amazonaws.com/musicnimbus/You+%26+Me+(feat.+Eliza+Doolittle)+(Flume+Remix).mp3')
+Track.create(track_name: 'Disclosure - You & Me (Flume Remix)', image: younme_pic, user: flume, audio: younme_audio)

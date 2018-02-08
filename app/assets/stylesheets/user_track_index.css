@@ -7,11 +7,14 @@
   display: flex;
 }
 
-.track-item-div {
-  height: 150px;
+.track-info-div {
+  height: 80px;
   display: flex;
-  background-color: blue;
+  /* background-color: blue; */
   flex-direction: column;
+  width: 400px;
+  margin-left: 10px;
+  margin-top: 10px;
 }
 
 .user-track-index {
@@ -20,4 +23,50 @@
   width: 850px;
   border-right: 1px solid #f2f2f2;
   margin-top: 20px;
+}
+
+.react-player {
+  background-color: red;
+  height: 30px;
+}
+
+video::-webkit-media-controls-play-button {
+
+  width: 50px;
+  height: 200px;
+  border-radius: 50%;
+  background-color: green;
+}
+
+.play-button {
+  margin-top: 20px;
+  background-color: #f50;
+  width:34px;
+  text-align: center;
+  border-radius: 50%;
+  height: 34px;
+}
+
+.item-upper-div {
+  display:flex;
+  margin-left: 14px
+}
+
+.track-artist {
+
+  color: #999;
+  font-size: 11px;
+  /* background-color: green; */
+}
+
+.track-name {
+
+  font-size: 14px;
+  color: #333;
+  margin-top: 2px;
+  /* background-color: orange; */
+}
+
+.play-button {
+  margin-top: 10px;;
 }
