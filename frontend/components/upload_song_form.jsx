@@ -8,6 +8,7 @@ class UploadSongForm extends React.Component {
     this.state = {
       track_name: "",
       preview: null,
+      acceptedTrack: null,
     };
     this.handleSubmit = this.handleSubmit.bind(this);
 
@@ -20,6 +21,7 @@ class UploadSongForm extends React.Component {
 
   trackOnDrop(accepted, rejected) {
     this.setState({acceptedTrack:accepted[0], rejectedTrack:rejected});
+    console.log(accepted);
   }
 
   componentWillReceiveProps(nextProps) {
@@ -68,7 +70,31 @@ class UploadSongForm extends React.Component {
   }
 
   render() {
+    var previewUrl = "";
+    if (this.state.preview){
+      var previewUrl = this.state.preview;
+    }
 
+    var trackImageDropZone = {
+      border: '2px solid black',
+      margin: '0 auto',
+      height: '160px',
+      width: '160px',
+      color: 'white',
+      backgroundImage: 'url('+ previewUrl + ')',
+      backgroundSize: '100%',
+    };
+
+    var trackAudioDropZone = {
+      margin: '0 auto',
+      height: '50px',
+      width: '325px',
+      border: '2px solid black',
+    };
+
+
+
+    var accepted = this.state.acceptedTrack ? this.state.acceptedTrack.name: "";
     var link = `/users/${this.props.currentUser.id}`;
     return (
       <div>
@@ -90,11 +116,12 @@ class UploadSongForm extends React.Component {
               <br></br>
 
               <br></br>
-            <Dropzone multiple={false} onDrop={this.imageOnDrop.bind(this)}/>
-            <img className="track-image-preview" src={this.state.preview}></img>
-
-            <Dropzone multiple={false} onDrop={this.trackOnDrop.bind(this)}/>
-            {this.state.acceptedTrackName}
+              <p className="upload-input-titles">Upload Track Image:</p>
+            <Dropzone style={trackImageDropZone} multiple={false} onDrop={this.imageOnDrop.bind(this)}></Dropzone>
+            <br></br>
+              <p className="upload-input-titles">Upload Track Audio: </p>
+            <Dropzone style={trackAudioDropZone} multiple={false} onDrop={this.trackOnDrop.bind(this)}/>
+            <div className="accepted-track">{accepted}</div>
 
             </div>
 

@@ -4,6 +4,7 @@ import UploadSongForm from './upload_song_form';
 import {uploadTrack} from '../actions/track_actions';
 
 const mapStateToProps = (state, ownProps) => {
+  console.log("asldkfjlsadkfjlksdjflkas lfjas flkjasfdl ");
   return {
     currentUser:state.session.currentUser
   };
