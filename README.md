@@ -1,5 +1,5 @@
 # Nimbus
-[Nimbus](https://musicnimbus.herokuapp.com/) is a clone of Soundcloud(link), a website that allows you to play music and maintain a profile with your own personal tracks. Nimbus uses Ruby on Rails  and Postgres on the back end and React with Redux on the front end.
+[Nimbus](https://musicnimbus.herokuapp.com/) is a clone of [Soundcloud](https://soundcloud.com/), a website that allows you to play music and maintain a profile with your own personal tracks. Nimbus uses Ruby on Rails  and Postgres on the back end and React with Redux on the front end.
 
 <p align="center">
   <a href="https://musicnimbus.herokuapp.com/#/"><img width=70% src="https://i.imgur.com/5IppneV.png" /></a>
