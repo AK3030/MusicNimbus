@@ -34,9 +34,9 @@ After adding songs to their profile users can play their newly uploaded audio as
 </p>
 
 ### Technologies
-[React Player](https://github.com/CookPete/react-player)
-[React dropzone](https://github.com/react-dropzone/react-dropzone)
-[Paperclip](https://github.com/thoughtbot/paperclip)
+* [React Player](https://github.com/CookPete/react-player)
+* [React dropzone](https://github.com/react-dropzone/react-dropzone)
+* [Paperclip](https://github.com/thoughtbot/paperclip)
 
 ### Future Directions
 * waveforms
