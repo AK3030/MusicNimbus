@@ -71,7 +71,13 @@ class UserTrackIndexItem extends React.Component {
       playButtonStyle = pauseStyle;
     }
 
-
+    // console.log(this.props.track.user_id);
+    // console.log(this.props.currentUser.id);
+    var editTrackButton = null;
+    if (this.props.currentUser) {
+      var editLink =`/#/users/${this.props.track.user_id}/tracks/${this.props.track.id}/edit`;
+      editTrackButton = (this.props.currentUser.id == this.props.track.user_id) ? <a href={editLink}><div className="edit-track-item">Edit</div></a> : null;
+    }
 
     return (
     <li className="track-index-item">
@@ -93,7 +99,7 @@ class UserTrackIndexItem extends React.Component {
 
         </div>
       <div className="track-item-buttons">
-        <a href='/'><div className="edit-track-item">Edit</div></a>
+        {editTrackButton}
       </div>
       </div>
 

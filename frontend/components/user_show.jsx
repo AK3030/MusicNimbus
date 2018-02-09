@@ -33,14 +33,18 @@ class UserShow extends React.Component {
     var userImageStyle = {
       backgroundImage: 'url('+image+')'
     };
-
-    var dropzone = (this.props.currentUser.id == this.props.match.params.userId) ? <ProfileDropzoneContainer imageType={"image"} /> : null;
-    var header_dropzone = (this.props.currentUser.id == this.props.match.params.userId) ? <ProfileDropzoneContainer imageType={"header_image"} /> : null;
+    if (this.props.currentUser){
+      var dropzone = (this.props.currentUser.id == this.props.match.params.userId) ? <ProfileDropzoneContainer imageType={"image"} /> : null;
+      var header_dropzone = (this.props.currentUser.id == this.props.match.params.userId) ? <ProfileDropzoneContainer imageType={"header_image"} /> : null;
+    }
 
     var editLink = `#/users/${this.props.match.params.userId}/edit`;
     var uploadSong = `#/users/${this.props.match.params.userId}/uploadSong`;
-    var edit_button = (this.props.currentUser.id == this.props.match.params.userId) ? <a href={editLink}><div className="edit">Edit</div></a> : null;
-    var upload_song_button = (this.props.currentUser.id == this.props.match.params.userId) ? <a href={uploadSong}><div className="edit">Upload Song</div></a> : null;
+
+    if (this.props.currentUser){
+      var edit_button = (this.props.currentUser.id == this.props.match.params.userId) ? <a href={editLink}><div className="edit">Edit</div></a> : null;
+      var upload_song_button = (this.props.currentUser.id == this.props.match.params.userId) ? <a href={uploadSong}><div className="edit">Upload Song</div></a> : null;
+    }
     return (
       <div>
         <div style={userHeaderStyle} id="user-header">

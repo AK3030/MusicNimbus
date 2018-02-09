@@ -22,7 +22,21 @@ class Api::TracksController < ApplicationController
   end
 
   def update
-
+    # if params[:user_id] == current_user.id.to_s
+    # p "hello o oo  - -- - -- - -"
+    p "hello--- - -- - "
+    p track_params[:track_name]
+    @track = Track.find_by(id: params[:id])
+    # p @track.track_name
+    if @track.user_id == current_user.id
+      if @track.update(track_params)
+        render :show
+      else
+        render @track.errors.full_messages, status, 401
+      end
+    else
+      render json: ["wrong user"], status: 422
+    end
 
   end
 

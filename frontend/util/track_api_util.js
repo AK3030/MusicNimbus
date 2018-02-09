@@ -28,3 +28,13 @@ export const uploadTrack = (track) => {
     processData: false,
   });
 };
+
+export const updateTrack = (trackId, track) => {
+  return $.ajax({
+    url: `api/tracks/${trackId}`,
+    method: `PATCH`,
+    data: track,
+    contentType: false,
+    processData: false
+  });
+};

@@ -10,6 +10,8 @@ import UserShowContainer from './user_show_container';
 import EditUserFormContainer from './edit_user_form_container';
 import UserTrackIndexContainer from './user_track_index_container';
 import UploadSongFormContainer from './upload_song_form_container';
+// import EditTrackForm from './edit_track_form';
+import EditTrackFormContainer from './edit_track_form_container';
 
 const App = () => (
   <div className="main">
@@ -21,6 +23,7 @@ const App = () => (
 
 
     <Switch>
+      <Route exact path="/users/:userId/tracks/:trackId/edit" component={EditTrackFormContainer} />
       <Route exact path="/uploadsongtest" component={UploadSongFormContainer}/>
       <Route exact path="/" component={GreetingContainer}/>
       <AuthRoute exact path="/signup" component={SessionFormContainer}/>

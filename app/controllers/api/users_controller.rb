@@ -16,10 +16,7 @@ class Api::UsersController < ApplicationController
   end
 
   def update
-    if (params[:id] == current_user.id.to_s)
-      p "hello -------- - - -"
-      p params[:id]
-      p current_user.id
+    if params[:id] == current_user.id.to_s
       @user = User.find_by(id: params[:id])
       if @user.update(user_params)
         render :show

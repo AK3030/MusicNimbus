@@ -54,3 +54,12 @@ export const uploadTrack = track => dispatch => (
     );
   })
 );
+
+export const updateTrack = (trackId, track) => dispatch => (
+  APIUtil.updateTrack(trackId, track).then((serverTrack) =>
+  dispatch(receiveTrack(serverTrack)), error => {
+    return (
+      dispatch(receiveTrackErrors(error.responseJSON))
+    );
+  })
+);

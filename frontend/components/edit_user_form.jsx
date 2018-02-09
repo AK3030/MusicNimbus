@@ -57,6 +57,7 @@ class EditUserForm extends React.Component {
   render() {
 
     var link = `/users/${this.props.currentUser.id}`;
+
     return (
       <div>
 
