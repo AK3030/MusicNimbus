@@ -19,19 +19,26 @@ const receiveAllUsers = users => {
   };
 };
 
-const receiveErrors = (errors) => ({
+const receiveErrors = (errors) => {
+  return {
   type:RECEIVE_USER_ERRORS,
   errors
-});
-
-export const updateUser = (id, userInfo) => dispatch => {
-  APIUtil.updateUser(id, userInfo).then((user) => dispatch(receiveUser(user))), error => (
-    dispatch(receiveErrors(error.responseJSON))
-  );
 };
+};
+
 
 export const fetchUser = userId => dispatch => {
   APIUtil.fetchUser(userId).then((user) => dispatch(receiveUser(user))),error => (
     dispatch(receiveErrors(error.responseJSON))
   );
+};
+
+export const updateUser = (id, userInfo) => dispatch => {
+
+  return APIUtil.updateUser(id, userInfo)
+    .then(user => {
+      dispatch(receiveUser(user));
+    }, error => {
+      dispatch(receiveErrors(error.responseJSON));
+    });
 };

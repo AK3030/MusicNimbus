@@ -10,7 +10,6 @@ const mapStateToProps = (state, ownProps) => {
 };
 
 const mapDispatchToProps = dispatch => {
-  // console.log(uploadTrack);
   return {
     updateUser: (id, userInfo) => dispatch(updateUser(id, userInfo)),
     uploadTrack: track => dispatch(uploadTrack(track))

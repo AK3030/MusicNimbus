@@ -4,11 +4,12 @@
   font-size:14px;
 }
 
-.profile-image-dropzone {
-  /* border-radius: 50%;
-  height: 200px;
-  width: 200px,
-  color: white, */
+/* .profile-image-section:hover {
+  background-color: rgba(50,50,50,.5);
+} */
+
+.profile-image-dropzone:hover {
+  background-color: rgba(50,50,50,.5);
 }
 
 .aside {

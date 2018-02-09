@@ -21,7 +21,6 @@
 
 .user-track-index {
   /* background-color: green; */
-  height: 1000px;
   width: 850px;
   border-right: 1px solid #f2f2f2;
   margin-top: 20px;
@@ -51,7 +50,7 @@ video::-webkit-media-controls-play-button {
 
 .item-upper-div {
   display:flex;
-  margin-left: 14px
+  /* margin-left: 14px */
 }
 
 .track-artist {
@@ -71,4 +70,51 @@ video::-webkit-media-controls-play-button {
 
 .play-button {
   margin-top: 10px;;
+}
+
+.edit-track-item {
+  text-align: center;
+  border: 1px solid #e5e5e5;
+  border-radius: 3px;
+  display: flex;
+  padding-top: 4px;
+  margin-top: -5px;
+  font-size: 12px;
+  width: 39px;
+  height: 18px;
+  padding-top: 1px;
+  padding-bottom: 0px;
+  padding-right: 4px;
+  padding-left: 4px;
+
+}
+
+.edit-track-item::before {
+  display: inline-block;
+  content: " ";
+  width: 17px;
+  height: 17px;
+  background-size: cover;
+  margin-right: 2px;
+  background-position-x: -2px;
+  background-repeat: no-repeat;
+  background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTciIGhlaWdodD0iMTciIHZpZXdCb3g9IjAgMCAxNyAxNyIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48dGl0bGU+ZWRpdDwvdGl0bGU+PHBhdGggZD0iTTExLjYwNyAyTDMuMTIgMTAuNDg1bC0uNzA3IDMuNTM2IDMuNTM2LS43MDcgOC40ODUtOC40ODZMMTEuNjA3IDJ6bTAgMS40MTRsLTcuMDcxIDcuMDcxLjcwNy43MDcgNy4wNy03LjA3LS43MDYtLjcwOHoiIGZpbGw9IiMyMjIiIGZpbGwtcnVsZT0iZXZlbm9kZCIvPjwvc3ZnPg==)
+}
+
+.edit-track-item {
+  text-align: right;
+  font-size: 12px;
+  width: 39px;
+  height: 18px;
+  padding-top: 1px;
+  padding-bottom: 0px;
+}
+
+
+
+.item-middle {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-left: 14px;
 }

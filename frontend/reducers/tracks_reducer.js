@@ -9,7 +9,6 @@ export default (oldState = {}, action) => {
     case RECEIVE_TRACK:
 
       const track = action.track;
-      console.log(track);
       return merge({}, oldState, {[track.id]: track});
     case RECEIVE_TRACKS:
       return merge({}, action.tracks);

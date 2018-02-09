@@ -35,7 +35,7 @@ class ProfileDropzone extends React.Component {
 
   render() {
     var profileDropzoneStyle = {
-      border: '2px solid orange',
+      // border: '2px solid white',
       borderRadius: '50%',
       height: '200px',
       width: '200px',
@@ -57,7 +57,7 @@ class ProfileDropzone extends React.Component {
 
     if (this.props.imageType == "header_image") {
       profileDropzoneStyle = {
-        border: '2px solid orange',
+        // border: '2px solid white',
         height: '260px',
         width: '909px',
         marginTop:'-30px',
@@ -78,11 +78,11 @@ class ProfileDropzone extends React.Component {
         <Dropzone accept="image/jpeg, image/png" className="profile-image-dropzone"
           multiple={false} style={profileDropzoneStyle} activeStyle={profileActiveStyle} onDrop={this.onDrop.bind(this)}>
 
-          <p className="dropzone-text">Try dropping some files here, or click to select files to upload.</p>
+          {/* <p className="dropzone-text">Try dropping some files here, or click to select files to upload.</p>*/}
         </Dropzone>
       </div>
       <aside className="aside">
-        <h2 className="dropzone-text">Dropped files</h2>
+        <h2 className="dropzone-text"></h2>
         <ul>
           {
             this.state.accepted.map(f => <li key={f.name} className="accepted-files">{f.name} - {f.size} bytes</li>)

@@ -30,15 +30,13 @@ class UserTrackIndexItem extends React.Component {
   playPause() {
     return () => {
       this.setState({playing: !this.state.playing});
-      console.log(this.state);
     };
   }
 
   onProgress() {
-    console.log("hello");
+
     return (state) => {
-      console.log(state);
-      console.log("hello");
+
       this.setState(state);
 
     };
@@ -78,20 +76,27 @@ class UserTrackIndexItem extends React.Component {
     return (
     <li className="track-index-item">
       <img className="track-item-image" src={linkCleaner(this.props.track.image)}></img>
-      <div className="item-upper-div">
-        <div style={playButtonStyle} className="play-button" onClick={this.playPause()}>{playing ? '' : ''}</div>
-        <div className="track-info-div">
-          <div className="track-artist">{this.props.trackartist}</div>
-          <div className="track-name">{this.props.track.track_name}</div>
+      <div className="item-middle">
+        <div className="item-upper-div">
+          <div style={playButtonStyle} className="play-button" onClick={this.playPause()}>{playing ? '' : ''}</div>
+          <div className="track-info-div">
+            <div className="track-artist">{this.props.trackartist}</div>
+            <div className="track-name">{this.props.track.track_name}</div>
 
-          <ReactPlayer
-            playing={playing}
-            onProgress={this.onProgress()}
-            height="0px"
-            className="react-player"
-            url={linkCleaner(this.props.track.audio)}/>
+            <ReactPlayer
+              playing={playing}
+              onProgress={this.onProgress()}
+              height="0px"
+              className="react-player"
+              url={linkCleaner(this.props.track.audio)}/>
+          </div>
+
+        </div>
+      <div className="track-item-buttons">
+        <a href='/'><div className="edit-track-item">Edit</div></a>
       </div>
       </div>
+
 
 
 

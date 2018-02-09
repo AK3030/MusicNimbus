@@ -46,6 +46,10 @@ body {
   background-size: 100%
 }
 
+#profile-image-container {
+  background-color: rgba(50,50,50,.5);
+}
+
 #profile-info-container {
   display:block;
   margin-left: 20px;
@@ -54,10 +58,10 @@ body {
 }
 
 #user-page {
-  display: block;
+  display: flex;
   width: 1180px;
-  /* height: 500px; */
-  /* background-color: orange; */
+  flex-direction: column;
+  height: 100%;
   margin: 0 auto;
   background-color: white;
   padding-top: 17px;
@@ -65,6 +69,7 @@ body {
   padding-right: 30px;
   font-family: "Interstate","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Garuda,Verdana,Tahoma,sans-serif;
 }
+
 
 #user-nav {
   font-family: "Interstate","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Garuda,Verdana,Tahoma,sans-serif;
@@ -110,10 +115,8 @@ body {
   text-align: center;
   border: 1px solid #e5e5e5;
   border-radius: 3px;
-  /* padding: 2px 11px 2px 10px; */
   padding-right: 10px;
   padding-left: 6px;
-  padding-top: 1px;
   padding-bottom: 1px;
   font-size: 14px;
   display: flex;

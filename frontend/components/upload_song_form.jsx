@@ -16,17 +16,10 @@ class UploadSongForm extends React.Component {
   imageOnDrop(accepted, rejected) {
     this.setState({acceptedImage: accepted[0], rejectedImage:rejected});
     this.setState({preview: accepted[0].preview});
-    console.log(this.props);
-    // console.log(this);
-    // console.log(accepted);
-    // console.log(accepted[0].preview);
   }
 
   trackOnDrop(accepted, rejected) {
     this.setState({acceptedTrack:accepted[0], rejectedTrack:rejected});
-    // this.setState({acceptedTrackName:accepted[0].name});
-    // console.log(accepted[0].name);
-    console.log(this.state);
   }
 
   componentWillReceiveProps(nextProps) {
@@ -37,17 +30,15 @@ class UploadSongForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    // const user = Object.assign({}, this.state);
-    // const reader = new FileReader();
+
     var formData = new FormData();
-    console.log("the track",this.state.acceptedTrack);
-    console.log("the image", this.state.acceptedImage);
+
+
     formData.append("track[track_name]", this.state.track_name);
     formData.append("track[image]", this.state.acceptedImage);
     formData.append("track[audio]", this.state.acceptedTrack);
     formData.append("track[user_id]", this.props.currentUser.id);
     this.props.uploadTrack(formData);
-    // console.log(this.state);
 
   }
 
@@ -58,7 +49,6 @@ class UploadSongForm extends React.Component {
   // }
 
   update(field) {
-    console.log(this.state);
     return e => this.setState({
       [field]: e.currentTarget.value
     });
@@ -66,14 +56,13 @@ class UploadSongForm extends React.Component {
 
   renderErrors() {
     return (
-      // <ul>
-      //   {this.props.errors.map((error, i) => (
-      //     <li key={`error-${i}`}>
-      //       {error}
-      //     </li>
-      //   ))}
-      // </ul>
-      <div></div>
+      <ul>
+        {this.props.errors.map((error, i) => (
+          <li key={`error-${i}`}>
+            {error}
+          </li>
+        ))}
+      </ul>
     );
   }
 

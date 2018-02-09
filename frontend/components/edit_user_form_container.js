@@ -4,7 +4,8 @@ import EditUserForm from './edit_user_form';
 
 const mapStateToProps = (state, ownProps) => {
   return {
-    currentUser:state.session.currentUser
+    currentUser:state.session.currentUser,
+    errors: state.errors.user
   };
 };
 

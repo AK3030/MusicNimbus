@@ -16,13 +16,20 @@ class Api::UsersController < ApplicationController
   end
 
   def update
-    # if (params[:id] == current_user.id)
+    if (params[:id] == current_user.id.to_s)
+      p "hello -------- - - -"
+      p params[:id]
+      p current_user.id
       @user = User.find_by(id: params[:id])
-      @user.update(user_params)
-      render :show
-    # else
-    #   render json: ["wrong user"], status: 404
-    # end
+      if @user.update(user_params)
+        render :show
+      else
+        p @user.errors.full_messages
+        render json: @user.errors.full_messages, status: 401
+      end
+    else
+      render json: ["wrong user"], status: 422
+    end
   end
 
   def index

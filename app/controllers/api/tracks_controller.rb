@@ -12,15 +12,17 @@ class Api::TracksController < ApplicationController
   end
 
   def create
-    p "hello -- - -- - - - -"
-    p track_params[:user_id]
-    p track_params[:audio]
     @track = Track.new(track_params)
     if @track.save!
       render :show
     else
       render json: @track.errors.full_messages, status: 422
     end
+
+  end
+
+  def update
+
 
   end
 
