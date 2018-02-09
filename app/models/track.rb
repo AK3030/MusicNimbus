@@ -25,12 +25,23 @@ class Track < ApplicationRecord
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
 
   has_attached_file :audio
+  validates_attachment_presence :audio
   validates_attachment_content_type :audio, :content_type => [ 'audio/mpeg', 'audio/x-mpeg', 'audio/mp3', 'audio/x-mp3', 'audio/mpeg3', 'audio/x-mpeg3', 'audio/mpg', 'audio/x-mpg', 'audio/x-mpegaudio' ]
 
   belongs_to :user
 
+
+  validate :reject_string
+
   def self.get_tracks_by_user_id(user_id)
     Track.where(user_id: user_id)
+
+  end
+
+
+
+  def reject_string
+    self.audio = nil if self.audio == "null"
 
   end
 

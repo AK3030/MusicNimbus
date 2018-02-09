@@ -12,8 +12,16 @@ class Api::TracksController < ApplicationController
   end
 
   def create
-    @track = Track.new(track_params)
-    if @track.save!
+
+    audio = track_params[:audio]
+    audio = nil if audio == "null"
+    image = track_params[:image]
+    image = nil if image == "undefined"
+    user_id = track_params[:user_id]
+    @track = Track.new(track_name: track_params[:track_name], audio: audio, image: image, user_id: user_id)
+
+    p @track
+    if @track.save
       render :show
     else
       render json: @track.errors.full_messages, status: 422
@@ -24,8 +32,8 @@ class Api::TracksController < ApplicationController
   def update
     # if params[:user_id] == current_user.id.to_s
     # p "hello o oo  - -- - -- - -"
-    p "hello--- - -- - "
-    p track_params[:track_name]
+
+    # track_params[:audio] = nil if track_params[:audio]
     @track = Track.find_by(id: params[:id])
     # p @track.track_name
     if @track.user_id == current_user.id
