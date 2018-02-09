@@ -12,6 +12,7 @@ import UserTrackIndexContainer from './user_track_index_container';
 import UploadSongFormContainer from './upload_song_form_container';
 // import EditTrackForm from './edit_track_form';
 import EditTrackFormContainer from './edit_track_form_container';
+import AllTrackIndexContainer from './all_track_index_container';
 
 const App = () => (
   <div className="main">
@@ -20,9 +21,11 @@ const App = () => (
     <Route path="/users/:userId" component={NavbarContainer}/>
     <Route exact path="/users/:userId/edit" component={UserShowContainer}/>
     <Route exact path="/users/:userId/uploadSong" component={UserShowContainer}/>
+    
 
 
     <Switch>
+
       <Route exact path="/users/:userId/tracks/:trackId/edit" component={EditTrackFormContainer} />
       <Route exact path="/uploadsongtest" component={UploadSongFormContainer}/>
       <Route exact path="/" component={GreetingContainer}/>

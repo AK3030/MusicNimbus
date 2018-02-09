@@ -42,9 +42,16 @@ class UserTrackIndexItem extends React.Component {
     };
   }
 
+  componentDidMount() {
 
+    // if (this.props.alltracks){
+    //   this.props.fetchUser(this.props.track.user_id);
+    // }
+
+  }
 
   render() {
+    console.log(this.props);
     const { url, playing, volume, muted, loop, played, loaded, duration, playbackRate } = this.state;
     // var playButtonBackground ='url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iOCIgaGVpZ2h0PSIxNCIgdmlld0JveD0iMCAwIDggMTQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHRpdGxlPlBsYXkgMjg8L3RpdGxlPjxwYXRoIGQ9Ik0wIDE0bDEuODQ2LTdMMCAwbDggNy04IDd6IiBmaWxsPSIjRkZGIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiLz48L3N2Zz4=)';
     // if (playing) {
@@ -71,14 +78,14 @@ class UserTrackIndexItem extends React.Component {
       playButtonStyle = pauseStyle;
     }
 
-    // console.log(this.props.track.user_id);
-    // console.log(this.props.currentUser.id);
+
+
     var editTrackButton = null;
     if (this.props.currentUser) {
       var editLink =`/#/users/${this.props.track.user_id}/tracks/${this.props.track.id}/edit`;
       editTrackButton = (this.props.currentUser.id == this.props.track.user_id) ? <a href={editLink}><div className="edit-track-item">Edit</div></a> : null;
     }
-
+    var artistLink = `#/users/${this.props.trackartist.id}`;
     return (
     <li className="track-index-item">
       <img className="track-item-image" src={linkCleaner(this.props.track.image)}></img>
@@ -86,7 +93,7 @@ class UserTrackIndexItem extends React.Component {
         <div className="item-upper-div">
           <div style={playButtonStyle} className="play-button" onClick={this.playPause()}>{playing ? '' : ''}</div>
           <div className="track-info-div">
-            <div className="track-artist">{this.props.trackartist}</div>
+            <div className="track-artist"><a href={artistLink}> {this.props.trackartist.username} </a></div>
             <div className="track-name">{this.props.track.track_name}</div>
 
             <ReactPlayer

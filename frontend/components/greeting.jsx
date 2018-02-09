@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import AllTrackIndexContainer from './all_track_index_container';
 
 const sessionLinks = () => (
   <div>
@@ -21,11 +22,15 @@ const personalGreeting = (currentUser, logout) => (
 
 const Greeting= ({currentUser, logout}) => {
   return (
+    <div>
       <div className="header">
         <div id="orange-banner"></div>
         {currentUser ? personalGreeting(currentUser, logout) : sessionLinks()}
       </div>
-
+      <div className="all-track-index">
+        <AllTrackIndexContainer/>
+      </div>
+    </div>
   );
 };
 

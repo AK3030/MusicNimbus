@@ -42,3 +42,12 @@ export const updateUser = (id, userInfo) => dispatch => {
       dispatch(receiveErrors(error.responseJSON));
     });
 };
+
+export const fetchAllUsers = () => dispatch => {
+  return APIUtil.fetchAllUsers()
+    .then(users => {
+      dispatch(receiveAllUsers(users));
+    }, error => {
+      dispatch(receiveErrors(error.responseJSON));
+    });
+};

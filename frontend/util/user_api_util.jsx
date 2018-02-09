@@ -13,3 +13,10 @@ export const updateUser = (id, userInfo) => {
     processData: false,
   });
 };
+
+export const fetchAllUsers = () => {
+  return $.ajax({
+    url:"/api/users",
+    method: "GET"
+  });
+};

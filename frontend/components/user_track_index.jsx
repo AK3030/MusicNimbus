@@ -16,7 +16,7 @@ class UserTrackIndex extends React.Component {
         <ul>
         {
         this.props.tracks.map( track => {
-          return <TrackIndexItem key={track.id} track={track} currentUser={this.props.currentUser}trackartist={this.props.user.username}/>;
+          return <TrackIndexItem key={track.id} track={track} currentUser={this.props.currentUser}trackartist={this.props.user}/>;
         })
         }
         </ul>
