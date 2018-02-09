@@ -20,7 +20,7 @@ Users can sign up for an account and update their information. Nimbus includes f
 </p>
 
 ### File Uploads
-Uploaded files including profile header images, profile images, album covers and song audio are stored on Amazon S3. When users submit a form or drag and drop a file, an ajax request is sent to the rails server (hosted on Heroku). The Paperclip library then routes the file to an Amazon S3 bucket. Rails then returns json including links to the newly uploaded file(s) which the front end can then render.
+Uploaded files including profile header images, profile images, album covers and song audio are stored on Amazon S3. When users submit a form or drag and drop a file, an ajax request is sent to the rails server (hosted on Heroku). The Paperclip library then routes the file to an Amazon S3 bucket. Rails then returns json including links to the newly uploaded file(s) which are inserted into jsx.
 
 <p align="center">
   <a href="https://musicnimbus.herokuapp.com/#/"><img width=70% src="https://media.giphy.com/media/3o7WIKr56AqILAFqTK/giphy.gif" /></a>
