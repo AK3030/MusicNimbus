@@ -14,7 +14,7 @@ import UploadSongFormContainer from './upload_song_form_container';
 import EditTrackFormContainer from './edit_track_form_container';
 import Stream from './stream';
 
-
+//clean up routes (need way to display menu bar everywhere except one screen)
 const App = () => (
   <div className="main">
     <Route exact path="/signup" component={GreetingContainer}/>
@@ -23,6 +23,7 @@ const App = () => (
     <Route exact path="/users/:userId/edit" component={UserShowContainer}/>
     <Route exact path="/users/:userId/uploadSong" component={UserShowContainer}/>
     <Route exact path="/stream" component={NavbarContainer}/>
+
 
 
 

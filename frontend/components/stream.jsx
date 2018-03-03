@@ -13,7 +13,7 @@ class Stream extends React.Component {
     // }
 
     return (
-      <div>Hi</div>
+      <div class="stream-page-container">Hi</div>
     );
   }
 }

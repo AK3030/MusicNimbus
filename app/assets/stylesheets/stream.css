@@ -1,0 +1,12 @@
+.stream-page-container {
+  display: flex;
+  width: 1180px;
+  flex-direction: column;
+  height: 100%;
+  margin: 0 auto;
+  background-color: white;
+  padding-top: 17px;
+  padding-left: 30px;
+  padding-right: 30px;
+  font-family: "Interstate","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Garuda,Verdana,Tahoma,sans-serif;
+}
