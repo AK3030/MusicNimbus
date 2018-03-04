@@ -1,3 +1,10 @@
+export const fetchRecentTracks = () => {
+  return $.ajax({
+    url: `/api/tracks`,
+    method: 'GET'
+  });
+};
+
 export const fetchTrack = trackId => {
   return $.ajax({
     url: `/api/tracks/${trackId}`,

@@ -30,7 +30,13 @@ class Api::UsersController < ApplicationController
   end
 
   def index
-    @users = User.all
+    # avoid n+1 queries with includes
+    recent_tracks = Track.includes(:user).last(15)
+
+    @users = []
+    recent_tracks.each do |track|
+      @users << track.user
+    end
   end
 
   def user_params

@@ -14,9 +14,9 @@ class AllTrackIndex extends React.Component {
       return null;
     }
 
-    // if (!this.props.users[1]) {
-    //   return null;
-    // }
+    if (!this.props.users[1]) {
+      return null;
+    }
 
     return (
       <div className="user-track-index">

@@ -1,5 +1,6 @@
 import React from 'react';
 import Dropzone from 'react-dropzone';
+import AllTrackIndexContainer from './all_track_index_container';
 
 class Stream extends React.Component {
   componentDidMount() {
@@ -13,7 +14,16 @@ class Stream extends React.Component {
     // }
 
     return (
-      <div class="stream-page-container">Hi</div>
+      <div className="stream-page-container">
+        <nav className="stream-nav">
+          <ul className="stream-nav-left">
+            <li>Stream</li>
+            <li>Charts</li>
+            <li>Discover</li>
+          </ul>
+        </nav>
+        
+      </div>
     );
   }
 }

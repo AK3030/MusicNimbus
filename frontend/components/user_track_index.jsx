@@ -4,7 +4,9 @@ import TrackIndexItem from './user_track_index_item';
 
 class UserTrackIndex extends React.Component {
   componentDidMount() {
+    console.log(this.props);
     this.props.fetchUserTracks(this.props.payload.userId);
+    // this.props.fetchUserTracks(4);
   }
 
   render() {
