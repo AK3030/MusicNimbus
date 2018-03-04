@@ -8,9 +8,8 @@ class Api::TracksController < ApplicationController
       p "helllooo - -- - -- --- - ---"
 
       @tracks = Track.get_tracks_by_user_id(params[:user_id])
-      p @tracks
     else
-      @tracks = Track.last(15)
+      @tracks = Track.last(10)
     end
   end
 

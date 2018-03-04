@@ -22,7 +22,7 @@ class Stream extends React.Component {
             <li>Discover</li>
           </ul>
         </nav>
-        
+        <AllTrackIndexContainer/>
       </div>
     );
   }

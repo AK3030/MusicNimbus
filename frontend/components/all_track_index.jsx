@@ -10,11 +10,11 @@ class AllTrackIndex extends React.Component {
   }
 
   render() {
-    if (!this.props.tracks[0]) {
+    if (!this.props.tracks[1]) {
       return null;
     }
 
-    if (!this.props.users[1]) {
+    if (!this.props.users[2]) {
       return null;
     }
 
@@ -23,6 +23,7 @@ class AllTrackIndex extends React.Component {
         <ul>
         {
         this.props.tracks.map( track => {
+          console.log(track);
           return <UserTrackIndexItemContainer alltracks={true} key={track.id} track={track} currentUser={this.props.currentUser} trackartist={this.props.users[track.user_id]}/>;
         })
         }

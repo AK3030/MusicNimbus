@@ -2,7 +2,7 @@
   display: flex;
   width: 1180px;
   flex-direction: column;
-  height: 500px;
+  height: 100%;
   margin: 0 auto;
   background-color: white;
   padding-top: 17px;
@@ -17,6 +17,8 @@
   justify-content: space-between;
   width: 1100;
   height: 30px;
+  padding-bottom: 40px;
+  margin-bottom: 30px;
 
   border-bottom: 1px solid #f2f2f2;
 }
