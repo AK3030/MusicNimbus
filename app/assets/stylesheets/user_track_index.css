@@ -5,14 +5,12 @@
 
 .track-index-item {
   display: flex;
-  /* background-color: green; */
   margin-bottom: 45px;
 }
 
 .track-info-div {
   height: 80px;
   display: flex;
-  /* background-color: blue; */
   flex-direction: column;
   width: 610px;
   margin-left: 10px;
@@ -25,6 +23,8 @@
   border-right: 1px solid #f2f2f2;
   margin-top: 20px;
 }
+
+
 
 .react-player {
   background-color: red;
@@ -61,10 +61,16 @@ video::-webkit-media-controls-play-button {
 }
 
 .waveform {
-
-  float: left;
   margin-left: -43px;
   margin-top: 8px;
+}
+
+.wave-form-line {
+
+  height: 1px;
+  background-color: white;
+  margin-top: -32px;
+  z-index: 2;
 }
 
 .track-name {

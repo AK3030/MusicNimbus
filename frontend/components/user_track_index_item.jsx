@@ -141,6 +141,8 @@ class UserTrackIndexItem extends React.Component {
             />
             </div>
 
+            <div className="wave-form-line">hi</div>
+
 
 
           </div>
