@@ -21,10 +21,11 @@ class UserTrackIndexItem extends React.Component {
     };
     this.load = this.load.bind(this);
     this.playPause = this.playPause.bind(this);
-    this.onSeekMouseDown = this.onSeekMouseDown.bind(this);
-    this.onSeekChange  = this.onSeekChange.bind(this);
-    this.onSeekMouseUp = this.onSeekMouseUp.bind(this);
+    // this.onSeekMouseDown = this.onSeekMouseDown.bind(this);
+    // this.onSeekChange  = this.onSeekChange.bind(this);
+    // this.onSeekMouseUp = this.onSeekMouseUp.bind(this);
     this.ref = this.ref.bind(this);
+    this.handlePosChange = this.handlePosChange.bind(this);
   }
 
   load() {
@@ -43,18 +44,18 @@ class UserTrackIndexItem extends React.Component {
     };
   }
 
-  onSeekMouseDown(e)  {
-    this.setState({ seeking: true });
-  }
-
-  onSeekChange(e) {
-    this.setState({ played: parseFloat(e.target.value) });
-  }
-
-  onSeekMouseUp (e) {
-    this.setState({ seeking: false });
-    this.player.seekTo(parseFloat(e.target.value));
-  }
+  // onSeekMouseDown(e)  {
+  //   this.setState({ seeking: true });
+  // }
+  //
+  // onSeekChange(e) {
+  //   this.setState({ played: parseFloat(e.target.value) });
+  // }
+  //
+  // onSeekMouseUp (e) {
+  //   this.setState({ seeking: false });
+  //   this.player.seekTo(parseFloat(e.target.value));
+  // }
 
   onProgress() {
     return (state) => {
@@ -76,7 +77,15 @@ class UserTrackIndexItem extends React.Component {
     this.player = player;
   }
 
+  handlePosChange(e) {
+    console.log(e.originalArgs[0]);
+    this.setState({
+      pos: e.originalArgs[0]
+    });
+  }
+
   render() {
+    console.log(this.state);
     const options = {
       height: 62,
       barWidth: 2,
@@ -141,7 +150,7 @@ class UserTrackIndexItem extends React.Component {
             />
             </div>
 
-            <div className="wave-form-line">hi</div>
+            <div className="wave-form-line">{this.state.pos}</div>
 
 
 
