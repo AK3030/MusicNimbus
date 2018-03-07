@@ -15,6 +15,12 @@ class UserTrackIndexItem extends React.Component {
       duration: 0,
       playbackRate: 1.0
     };
+    this.load = this.load.bind(this);
+    this.playPause = this.playPause.bind(this);
+    this.onSeekMouseDown = this.onSeekMouseDown.bind(this);
+    this.onSeekChange  = this.onSeekChange.bind(this);
+    this.onSeekMouseUp = this.onSeekMouseUp.bind(this);
+    this.ref = this.ref.bind(this);
   }
 
   load() {
@@ -33,12 +39,24 @@ class UserTrackIndexItem extends React.Component {
     };
   }
 
+  onSeekMouseDown(e)  {
+    this.setState({ seeking: true });
+  }
+
+  onSeekChange(e) {
+    this.setState({ played: parseFloat(e.target.value) });
+  }
+
+  onSeekMouseUp (e) {
+    this.setState({ seeking: false });
+    this.player.seekTo(parseFloat(e.target.value));
+  }
+
   onProgress() {
-
     return (state) => {
-
-      this.setState(state);
-
+      if (!this.state.seeking) {
+        this.setState(state);
+      }
     };
   }
 
@@ -48,6 +66,10 @@ class UserTrackIndexItem extends React.Component {
     //   this.props.fetchUser(this.props.track.user_id);
     // }
 
+  }
+
+  ref(player) {
+    this.player = player;
   }
 
   render() {
@@ -97,17 +119,32 @@ class UserTrackIndexItem extends React.Component {
             <div className="track-name">{this.props.track.track_name}</div>
 
             <ReactPlayer
+              ref = {this.ref}
               playing={playing}
               onProgress={this.onProgress()}
               height="0px"
               className="react-player"
-              url={linkCleaner(this.props.track.audio)}/>
+              onSeek={e => console.log('onSeek', e)}
+              url={linkCleaner(this.props.track.audio)}
+              onReady={() => console.log('onReady')}
+              onStart={() => console.log('onStart')}
+              onPlay={this.onPlay}
+              onPause={this.onPause}
+              onBuffer={() => console.log('onBuffer')}
+              />
           </div>
 
         </div>
       <div className="track-item-buttons">
         {editTrackButton}
       </div>
+      <input
+                  type='range' min={0} max={1} step='any'
+                  value={played}
+                  onMouseDown={this.onSeekMouseDown}
+                  onChange={this.onSeekChange}
+                  onMouseUp={this.onSeekMouseUp}
+                />
       </div>
 
 
