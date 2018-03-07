@@ -2,7 +2,8 @@ require('wavesurfer.js');
 
 import React from 'react';
 import linkCleaner from '../util/aws_link_cleaner';
-import ReactPlayer from 'react-player';
+// import ReactPlayer from 'react-player';
+import conversion from '../util/time_conversion';
 
 import Wavesurfer from 'react-wavesurfer';
 
@@ -150,7 +151,7 @@ class UserTrackIndexItem extends React.Component {
             />
             </div>
 
-            <div className="wave-form-line">{this.state.pos}</div>
+            <div className="wave-form-line">{conversion(this.state.pos)}</div>
 
 
 
