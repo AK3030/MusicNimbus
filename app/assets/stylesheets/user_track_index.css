@@ -14,7 +14,7 @@
   display: flex;
   /* background-color: blue; */
   flex-direction: column;
-  width: 400px;
+  width: 610px;
   margin-left: 10px;
   margin-top: 10px;
 }
@@ -58,6 +58,13 @@ video::-webkit-media-controls-play-button {
   color: #999;
   font-size: 11px;
   /* background-color: green; */
+}
+
+.waveform {
+
+  float: left;
+  margin-left: -43px;
+  margin-top: 8px;
 }
 
 .track-name {

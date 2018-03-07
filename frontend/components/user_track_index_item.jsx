@@ -1,6 +1,10 @@
+require('wavesurfer.js');
+
 import React from 'react';
 import linkCleaner from '../util/aws_link_cleaner';
 import ReactPlayer from 'react-player';
+
+import Wavesurfer from 'react-wavesurfer';
 
 class UserTrackIndexItem extends React.Component {
   constructor(props) {
@@ -73,6 +77,14 @@ class UserTrackIndexItem extends React.Component {
   }
 
   render() {
+    const options = {
+      height: 62,
+      barWidth: 2,
+      hideScrollbar: true,
+      cursorWidth: 0,
+      normalize: true,
+      fillParent: true
+    };
     console.log(this.props);
     const { url, playing, volume, muted, loop, played, loaded, duration, playbackRate } = this.state;
     // var playButtonBackground ='url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iOCIgaGVpZ2h0PSIxNCIgdmlld0JveD0iMCAwIDggMTQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHRpdGxlPlBsYXkgMjg8L3RpdGxlPjxwYXRoIGQ9Ik0wIDE0bDEuODQ2LTdMMCAwbDggNy04IDd6IiBmaWxsPSIjRkZGIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiLz48L3N2Zz4=)';
@@ -109,6 +121,7 @@ class UserTrackIndexItem extends React.Component {
     }
     var artistLink = `#/users/${this.props.trackartist.id}`;
     return (
+
     <li className="track-index-item">
       <img className="track-item-image" src={linkCleaner(this.props.track.image)}></img>
       <div className="item-middle">
@@ -118,33 +131,25 @@ class UserTrackIndexItem extends React.Component {
             <div className="track-artist"><a href={artistLink}> {this.props.trackartist.username} </a></div>
             <div className="track-name">{this.props.track.track_name}</div>
 
-            <ReactPlayer
-              ref = {this.ref}
-              playing={playing}
-              onProgress={this.onProgress()}
-              height="0px"
-              className="react-player"
-              onSeek={e => console.log('onSeek', e)}
-              url={linkCleaner(this.props.track.audio)}
-              onReady={() => console.log('onReady')}
-              onStart={() => console.log('onStart')}
-              onPlay={this.onPlay}
-              onPause={this.onPause}
-              onBuffer={() => console.log('onBuffer')}
-              />
+            <div className = "waveform">
+            <Wavesurfer
+              options = {options}
+              audioFile={linkCleaner(this.props.track.audio)}
+              pos={this.state.pos}
+              onPosChange={this.handlePosChange}
+              playing={this.state.playing}
+            />
+            </div>
+
+
+
           </div>
 
         </div>
       <div className="track-item-buttons">
         {editTrackButton}
       </div>
-      <input
-                  type='range' min={0} max={1} step='any'
-                  value={played}
-                  onMouseDown={this.onSeekMouseDown}
-                  onChange={this.onSeekChange}
-                  onMouseUp={this.onSeekMouseUp}
-                />
+
       </div>
 
 
