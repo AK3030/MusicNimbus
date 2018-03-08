@@ -18,7 +18,8 @@ class UserTrackIndexItem extends React.Component {
       played: 0,
       loaded: 0,
       duration: 0,
-      playbackRate: 1.0
+      playbackRate: 1.0,
+      pos: 0
     };
     this.load = this.load.bind(this);
     this.playPause = this.playPause.bind(this);
@@ -27,6 +28,7 @@ class UserTrackIndexItem extends React.Component {
     // this.onSeekMouseUp = this.onSeekMouseUp.bind(this);
     this.ref = this.ref.bind(this);
     this.handlePosChange = this.handlePosChange.bind(this);
+    this.handleReady = this.handleReady.bind(this);
   }
 
   load() {
@@ -79,23 +81,32 @@ class UserTrackIndexItem extends React.Component {
   }
 
   handlePosChange(e) {
-    console.log(e.originalArgs[0]);
+    // console.log(e.originalArgs[1]);
     this.setState({
       pos: e.originalArgs[0]
     });
   }
 
+  handleReady(args) {
+  // call method immediately:
+  this.state.duration = args.wavesurfer.getDuration();
+  this.setState({
+    duration: args.wavesurfer.getDuration()
+  })
+  // … or cache wavesurfer instance:
+  // this.wavesurferInstance = args.wavesurfer;
+  }
+
   render() {
-    console.log(this.state);
     const options = {
       height: 62,
       barWidth: 2,
       hideScrollbar: true,
       cursorWidth: 0,
       normalize: true,
-      fillParent: true
+      fillParent: true,
+      progressColor: '#FC491E'
     };
-    console.log(this.props);
     const { url, playing, volume, muted, loop, played, loaded, duration, playbackRate } = this.state;
     // var playButtonBackground ='url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iOCIgaGVpZ2h0PSIxNCIgdmlld0JveD0iMCAwIDggMTQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHRpdGxlPlBsYXkgMjg8L3RpdGxlPjxwYXRoIGQ9Ik0wIDE0bDEuODQ2LTdMMCAwbDggNy04IDd6IiBmaWxsPSIjRkZGIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiLz48L3N2Zz4=)';
     // if (playing) {
@@ -121,6 +132,8 @@ class UserTrackIndexItem extends React.Component {
     if (playing) {
       playButtonStyle = pauseStyle;
     }
+    console.log("hello");
+    console.log(linkCleaner(this.props.track.audio));
 
 
 
@@ -129,6 +142,9 @@ class UserTrackIndexItem extends React.Component {
       var editLink =`/#/users/${this.props.track.user_id}/tracks/${this.props.track.id}/edit`;
       editTrackButton = (this.props.currentUser.id == this.props.track.user_id) ? <a href={editLink}><div className="edit-track-item">Edit</div></a> : null;
     }
+    var trackItemProgress = this.state.pos ? <div className="track-item-progress">{conversion(this.state.pos)}</div> : null;
+    var trackItemDuration = this.state.duration ? <div className="track-item-progress">{conversion(this.state.duration)}</div> : null;
+
     var artistLink = `#/users/${this.props.trackartist.id}`;
     return (
 
@@ -141,28 +157,43 @@ class UserTrackIndexItem extends React.Component {
             <div className="track-artist"><a href={artistLink}> {this.props.trackartist.username} </a></div>
             <div className="track-name">{this.props.track.track_name}</div>
 
-            <div className = "waveform">
-            <Wavesurfer
-              options = {options}
-              audioFile={linkCleaner(this.props.track.audio)}
-              pos={this.state.pos}
-              onPosChange={this.handlePosChange}
-              playing={this.state.playing}
-            />
-            </div>
-
-            <div className="wave-form-line">{conversion(this.state.pos)}</div>
-
-
-
           </div>
 
         </div>
-      <div className="track-item-buttons">
-        {editTrackButton}
-      </div>
+
+        <div className="track-item-buttons">
+          {editTrackButton}
+        </div>
+
+        <div className = "track-progress-div">
+
+            <div className="progress-text"> {trackItemProgress} </div>
+            <div className="waveform-line"></div>
+            <div className="song-length"> {trackItemDuration} </div>
+
+
+          <div className = "waveform">
+          <Wavesurfer
+            options = {options}
+            audioFile={linkCleaner(this.props.track.audio)}
+            pos={this.state.pos}
+            onPosChange={this.handlePosChange}
+            playing={this.state.playing}
+            onReady={this.handleReady}
+
+
+          />
+          </div>
+
+
+
+        </div>
+
+        <div className = "comment-div"></div>
+
 
       </div>
+
 
 
 

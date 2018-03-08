@@ -23,7 +23,7 @@ class AllTrackIndex extends React.Component {
         <ul>
         {
         this.props.tracks.map( track => {
-          console.log(track);
+          
           return <UserTrackIndexItemContainer alltracks={true} key={track.id} track={track} currentUser={this.props.currentUser} trackartist={this.props.users[track.user_id]}/>;
         })
         }

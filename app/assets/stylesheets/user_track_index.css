@@ -9,7 +9,7 @@
 }
 
 .track-info-div {
-  height: 80px;
+  height: 50px;
   display: flex;
   flex-direction: column;
   width: 610px;
@@ -18,26 +18,16 @@
 }
 
 .user-track-index {
-  /* background-color: green; */
+
   width: 850px;
   border-right: 1px solid #f2f2f2;
   margin-top: 20px;
 }
 
-
-
-.react-player {
+/* .react-player {
   background-color: red;
   height: 30px;
-}
-
-video::-webkit-media-controls-play-button {
-
-  width: 50px;
-  height: 200px;
-  border-radius: 50%;
-  background-color: green;
-}
+} */
 
 .play-button {
   margin-top: 20px;
@@ -51,6 +41,7 @@ video::-webkit-media-controls-play-button {
 .item-upper-div {
   display:flex;
   /* margin-left: 14px */
+
 }
 
 .track-artist {
@@ -61,16 +52,29 @@ video::-webkit-media-controls-play-button {
 }
 
 .waveform {
-  margin-left: -43px;
-  margin-top: 8px;
+  z-index: 0;
 }
 
-.wave-form-line {
-
+.waveform-line {
+  position: relative;
   height: 1px;
   background-color: white;
-  margin-top: -35px;
-  z-index: 2;
+  margin-top: 33px;
+  z-index: 3;
+  margin-bottom: -31.5px;
+}
+
+.track-item-progress {
+  display: table;
+  z-index: 3;
+  background-color: black;
+  width: auto;
+  color: #8C8C8C;
+  font-size: 11px;
+  padding-left: 2px;
+  padding-right: 2px;
+  padding-top: 1px;
+  padding-bottom: 1px;
 }
 
 .track-name {
@@ -130,4 +134,29 @@ video::-webkit-media-controls-play-button {
   flex-direction: column;
   justify-content: space-between;
   margin-left: 14px;
+
+}
+
+.track-progress-div {
+
+
+}
+
+.comment-div {
+  height: 20px;
+
+}
+
+.progress-text {
+  position: absolute;
+  margin-top: 18px;
+  z-index: 10;
+}
+
+.song-length {
+  position: relative;
+  float: right;
+  margin-top: 15px;
+  margin-left: -10px;
+  z-index: 10;
 }
