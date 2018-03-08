@@ -26,6 +26,8 @@ const Greeting= ({currentUser, logout}) => {
       <div className="header">
         <div id="orange-banner"></div>
         {currentUser ? personalGreeting(currentUser, logout) : sessionLinks()}
+        <div className = "greeting-title">Connect on Nimbus</div>
+        <div className = "greeting-text">Discover, stream, and share a constantly expanding mix of music from emerging and major artists around the world.</div>
       </div>
       <div className="all-track-index">
         <AllTrackIndexContainer/>

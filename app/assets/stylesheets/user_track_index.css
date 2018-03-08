@@ -160,3 +160,7 @@
   margin-left: -10px;
   z-index: 10;
 }
+
+.track-progress {
+  color: #f50;
+}

@@ -19,7 +19,7 @@
 #
 
 class Track < ApplicationRecord
-  validates :track_name, presence: true
+  validates :track_name, :user_id, presence: true
 
   has_attached_file :image, styles: { medium: "300x300>", thumb: "100x100>" }, default_url: "/images/:style/missing.png"
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
@@ -30,15 +30,11 @@ class Track < ApplicationRecord
 
   belongs_to :user
 
-
   validate :reject_string
 
   def self.get_tracks_by_user_id(user_id)
     Track.where(user_id: user_id)
-
   end
-
-
 
   def reject_string
     self.audio = nil if self.audio == "null"

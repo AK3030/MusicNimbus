@@ -142,7 +142,7 @@ class UserTrackIndexItem extends React.Component {
       var editLink =`/#/users/${this.props.track.user_id}/tracks/${this.props.track.id}/edit`;
       editTrackButton = (this.props.currentUser.id == this.props.track.user_id) ? <a href={editLink}><div className="edit-track-item">Edit</div></a> : null;
     }
-    var trackItemProgress = this.state.pos ? <div className="track-item-progress">{conversion(this.state.pos)}</div> : null;
+    var trackItemProgress = this.state.pos ? <div className="track-item-progress track-progress">{conversion(this.state.pos)}</div> : null;
     var trackItemDuration = this.state.duration ? <div className="track-item-progress">{conversion(this.state.duration)}</div> : null;
 
     var artistLink = `#/users/${this.props.trackartist.id}`;
