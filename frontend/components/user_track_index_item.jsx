@@ -23,9 +23,6 @@ class UserTrackIndexItem extends React.Component {
     };
     this.load = this.load.bind(this);
     this.playPause = this.playPause.bind(this);
-    // this.onSeekMouseDown = this.onSeekMouseDown.bind(this);
-    // this.onSeekChange  = this.onSeekChange.bind(this);
-    // this.onSeekMouseUp = this.onSeekMouseUp.bind(this);
     this.ref = this.ref.bind(this);
     this.handlePosChange = this.handlePosChange.bind(this);
     this.handleReady = this.handleReady.bind(this);
@@ -46,19 +43,6 @@ class UserTrackIndexItem extends React.Component {
       this.setState({playing: !this.state.playing});
     };
   }
-
-  // onSeekMouseDown(e)  {
-  //   this.setState({ seeking: true });
-  // }
-  //
-  // onSeekChange(e) {
-  //   this.setState({ played: parseFloat(e.target.value) });
-  // }
-  //
-  // onSeekMouseUp (e) {
-  //   this.setState({ seeking: false });
-  //   this.player.seekTo(parseFloat(e.target.value));
-  // }
 
   onProgress() {
     return (state) => {
@@ -171,21 +155,22 @@ class UserTrackIndexItem extends React.Component {
             <div className="waveform-line"></div>
             <div className="song-length"> {trackItemDuration} </div>
 
+            <div className = "waveform">
+              <Wavesurfer
+                options = {options}
+                audioFile={linkCleaner(this.props.track.audio)}
+                pos={this.state.pos}
+                onPosChange={this.handlePosChange}
+                playing={this.state.playing}
+                onReady={this.handleReady}
+              />
+            </div>
 
-          <div className = "waveform">
-          <Wavesurfer
-            options = {options}
-            audioFile={linkCleaner(this.props.track.audio)}
-            pos={this.state.pos}
-            onPosChange={this.handlePosChange}
-            playing={this.state.playing}
-            onReady={this.handleReady}
-
-
-          />
-          </div>
-
-
+            <div className="track-comment-div">
+              <div className="track-comment-transparent">
+                <div className="track-comment-photobar"></div>
+              </div>
+            </div>
 
         </div>
 
@@ -193,10 +178,6 @@ class UserTrackIndexItem extends React.Component {
 
 
       </div>
-
-
-
-
 
     </li>
 

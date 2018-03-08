@@ -164,3 +164,21 @@
 .track-progress {
   color: #f50;
 }
+
+.track-comment-transparent {
+  position: relative;
+  width: 100%;
+  background-color: rgba(250,250,250,.7);
+  height: 35px;
+  margin-top: -31px;
+  z-index: 15;
+}
+
+.track-comment-photobar {
+  position: relative;
+  width: 100%;
+  height: 15px;
+  /* background-color: blue; */
+  z-index: 20;
+
+}
