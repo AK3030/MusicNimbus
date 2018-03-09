@@ -8,9 +8,9 @@ export default (oldState = {}, action) => {
   switch (action.type) {
     case RECEIVE_USER:
       const user = action.user;
-      return merge({}, { [user.id]: user });
+      return merge({}, {}, { [user.id]: user });
     case RECEIVE_ALL_USERS:
-      return merge({}, action.users);
+      return merge({}, {}, action.users);
     default:
       return oldState;
   }

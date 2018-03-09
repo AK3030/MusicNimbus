@@ -31,7 +31,7 @@ class Api::UsersController < ApplicationController
 
   def index
     # avoid n+1 queries with includes
-    recent_tracks = Track.includes(:user).last(10)
+    recent_tracks = Track.includes(:user).last(6)
 
     @users = []
     recent_tracks.each do |track|

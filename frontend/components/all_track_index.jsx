@@ -5,25 +5,41 @@ import UserTrackIndexItemContainer from './user_track_index_item_container';
 
 class AllTrackIndex extends React.Component {
   componentDidMount() {
-    this.props.fetchAllTracks();
+    console.log("helloo - - - -");
     this.props.fetchAllUsers();
+    this.props.fetchAllTracks();
+
   }
 
+  // componentWillReceiveProps() {
+  //   this.props.fetchAllTracks();
+  //   this.props.fetchAllUsers();
+  //
+  // }
+
+
   render() {
+
     if (!this.props.tracks[1]) {
-      return null;
+      return "hi";
+    }
+    // console.log(Object.keys(this.props.users).length);
+    if (Object.keys(this.props.users).length < 2) {
+      console.log(this.props.users);
+      console.log("aslkdfjasf - - - -");
+      // this.props.fetchAllUsers();
+      return "Hi";
     }
 
-    if (!this.props.users[2]) {
-      return null;
-    }
+    console.log(this.props.users.keys);
+
 
     return (
       <div className="user-track-index">
         <ul>
         {
         this.props.tracks.map( track => {
-          
+
           return <UserTrackIndexItemContainer alltracks={true} key={track.id} track={track} currentUser={this.props.currentUser} trackartist={this.props.users[track.user_id]}/>;
         })
         }

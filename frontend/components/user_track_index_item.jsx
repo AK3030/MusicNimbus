@@ -76,7 +76,7 @@ class UserTrackIndexItem extends React.Component {
   this.state.duration = args.wavesurfer.getDuration();
   this.setState({
     duration: args.wavesurfer.getDuration()
-  })
+  });
   // … or cache wavesurfer instance:
   // this.wavesurferInstance = args.wavesurfer;
   }
@@ -116,8 +116,8 @@ class UserTrackIndexItem extends React.Component {
     if (playing) {
       playButtonStyle = pauseStyle;
     }
-    console.log("hello");
-    console.log(linkCleaner(this.props.track.audio));
+    // console.log("hello");
+    // console.log(linkCleaner(this.props.track.audio));
 
 
 
@@ -174,7 +174,21 @@ class UserTrackIndexItem extends React.Component {
 
         </div>
 
-        <div className = "comment-div"></div>
+        <div className = "comment-div">
+          <div className = "grey-comment-container">
+
+            <form className="comment-form">
+              <label>
+                <input
+                  placeholder ="Write a comment"
+                  type="text"
+
+                />
+              </label>
+            </form>
+          </div>
+
+        </div>
 
 
       </div>
