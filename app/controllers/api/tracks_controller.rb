@@ -5,8 +5,6 @@ class Api::TracksController < ApplicationController
 
   def index
     if params[:user_id]
-      p "helllooo - -- - -- --- - ---"
-
       @tracks = Track.get_tracks_by_user_id(params[:user_id])
     else
       @tracks = Track.last(6)

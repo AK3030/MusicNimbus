@@ -3,7 +3,11 @@ import ReactDOM from 'react-dom';
 import configureStore from './store/store';
 import Root from './components/root';
 
-import {fetchTrack, fetchAllTracks, fetchUserTracks} from './actions/track_actions';
+// import {fetchTrackComments, createComment} from './util/comment_api_util';
+import {fetchTrackComments} from './actions/comment_actions';
+
+
+
 
 document.addEventListener('DOMContentLoaded', () => {
   let store;
@@ -14,10 +18,10 @@ document.addEventListener('DOMContentLoaded', () => {
   } else {
     store = configureStore();
   }
-  window.fetchTrack = fetchTrack;
-  window.fetchAllTracks = fetchAllTracks;
-  window.store=store;
-  window.fetchUserTracks =fetchUserTracks;
+
+  window.fetchTrackComments = fetchTrackComments;
+
+  window.store = store;
 
   const root = document.getElementById('root');
   ReactDOM.render(<Root store={ store }/>, root);

@@ -17,4 +17,8 @@ class Comment < ApplicationRecord
   belongs_to :user
   belongs_to :track
 
+  def self.get_comment_by_track_id(track_id)
+    Comment.where(track_id: track_id)
+  end
+
 end
