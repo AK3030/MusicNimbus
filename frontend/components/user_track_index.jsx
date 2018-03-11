@@ -1,5 +1,6 @@
 import React from 'react';
 import TrackIndexItem from './user_track_index_item';
+import UserTrackIndexItemContainer from './user_track_index_item_container';
 
 
 class UserTrackIndex extends React.Component {
@@ -18,7 +19,7 @@ class UserTrackIndex extends React.Component {
         <ul>
         {
         this.props.tracks.map( track => {
-          return <TrackIndexItem key={track.id} track={track} currentUser={this.props.currentUser}trackartist={this.props.user}/>;
+          return <UserTrackIndexItemContainer key={track.id} track={track} currentUser={this.props.currentUser}trackartist={this.props.user}/>;
         })
         }
         </ul>

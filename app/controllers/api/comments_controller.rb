@@ -1,6 +1,6 @@
 class Api::CommentsController < ApplicationController
   def create
-    @comment = Comment.new(body: comment_params[:body], user_id: comment_params[:user_id], timestamp: comment_params[:timestamp])
+    @comment = Comment.new(body: comment_params[:body], user_id: comment_params[:user_id], timestamp: comment_params[:timestamp], track_id: comment_params[:track_id])
     if @comment.save
       render :show
     else

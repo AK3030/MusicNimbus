@@ -130,33 +130,35 @@
 
 
 .item-middle {
-  display: flex;
-  flex-direction: column;
+  /* display: flex;
+  flex-direction: column; */
   justify-content: space-between;
   margin-left: 14px;
+  /* background-color: green; */
 
 }
 
 .track-progress-div {
-
-
+  margin-top: -10px;
+  /* background-color: green; */
 }
 
 .comment-div {
+  /* background-color: green; */
   height: 20px;
 
 }
 
 .progress-text {
   position: absolute;
-  margin-top: 18px;
+  margin-top: -15px;
   z-index: 10;
 }
 
 .song-length {
   position: relative;
   float: right;
-  margin-top: 15px;
+  margin-top: -15px;
   margin-left: -10px;
   z-index: 10;
 }

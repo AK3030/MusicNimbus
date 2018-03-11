@@ -7,6 +7,9 @@ import conversion from '../util/time_conversion';
 
 import Wavesurfer from 'react-wavesurfer';
 
+import TrackItemCommentForm from './track_item_comment_form';
+import TrackItemCommentFormContainer from './track_item_comment_form_container';
+
 class UserTrackIndexItem extends React.Component {
   constructor(props) {
     super(props);
@@ -53,7 +56,9 @@ class UserTrackIndexItem extends React.Component {
   }
 
   componentDidMount() {
-
+    console.log("lkjsfasdf", this.props.track.id);
+    console.log(this.props);
+    this.props.fetchTrackComments(this.props.track.id);
     // if (this.props.alltracks){
     //   this.props.fetchUser(this.props.track.user_id);
     // }
@@ -116,9 +121,6 @@ class UserTrackIndexItem extends React.Component {
     if (playing) {
       playButtonStyle = pauseStyle;
     }
-    // console.log("hello");
-    // console.log(linkCleaner(this.props.track.audio));
-
 
 
     var editTrackButton = null;
@@ -130,6 +132,8 @@ class UserTrackIndexItem extends React.Component {
     var trackItemDuration = this.state.duration ? <div className="track-item-progress">{conversion(this.state.duration)}</div> : null;
 
     var artistLink = `#/users/${this.props.trackartist.id}`;
+
+
     return (
 
     <li className="track-index-item">
@@ -170,26 +174,13 @@ class UserTrackIndexItem extends React.Component {
               <div className="track-comment-transparent">
                 <div className="track-comment-photobar"></div>
               </div>
+
+
             </div>
 
         </div>
 
-        <div className = "comment-div">
-          <div className = "grey-comment-container">
-
-            <form className="comment-form">
-              <label>
-                <input
-                  placeholder ="Write a comment"
-                  type="text"
-
-                />
-              </label>
-            </form>
-          </div>
-
-        </div>
-
+        <TrackItemCommentFormContainer trackId={this.props.track.id}/>
 
       </div>
 

@@ -4,7 +4,7 @@ import configureStore from './store/store';
 import Root from './components/root';
 
 // import {fetchTrackComments, createComment} from './util/comment_api_util';
-import {fetchTrackComments} from './actions/comment_actions';
+import {fetchTrackComments, createComment} from './actions/comment_actions';
 
 
 
@@ -20,6 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   window.fetchTrackComments = fetchTrackComments;
+  window.createComment = createComment;
 
   window.store = store;
 
