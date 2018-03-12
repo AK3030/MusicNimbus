@@ -7,7 +7,8 @@ import {fetchTrackComments} from '../actions/comment_actions';
 const mapStateToProps = (state, ownProps) => {
   return {
     track: ownProps.track,
-    trackartist: ownProps.trackartist
+    trackartist: ownProps.trackartist,
+    comments: state.comments
   };
 };
 

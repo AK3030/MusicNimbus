@@ -178,10 +178,17 @@
 
 .track-comment-photobar {
   position: relative;
+  display: inline-block;
   width: 100%;
   height: 15px;
-  /* background-color: blue; */
+  background-color: blue;
   z-index: 20;
+
+}
+
+.test-thing {
+  position: absolute;
+  left: 50%
 
 }
 

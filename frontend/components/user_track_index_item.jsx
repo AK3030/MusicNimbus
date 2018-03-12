@@ -134,6 +134,42 @@ class UserTrackIndexItem extends React.Component {
     var artistLink = `#/users/${this.props.trackartist.id}`;
 
 
+    // console.log("comments", this.props.comments);
+    // if (this.props.comments) {
+    //   var trackComments = this.props.comments[this.props.track.id];
+    //   var trackCommentsArray = Object.keys(trackComments).map (key => trackComments[key].body);
+    //   console.log("trackcomments", trackComments);
+    //
+    // }
+
+    var trackComments = this.props.comments[this.props.track.id];
+    var trackCommentsArray = null;
+    if (trackComments) {
+      // console.log(Object.keys(trackComments).map (key => trackComments[key].body));
+      trackCommentsArray = Object.keys(trackComments).map (key => {
+        console.log("timestamp", trackComments[key].timestamp);
+        console.log("duration", this.state.duration);
+        console.log("percentage thing", (trackComments[key].timestamp/this.state.duration)*100);
+        var percentage = (trackComments[key].timestamp/this.state.duration)*100;
+        let commentItemStyle = {
+          color: "green",
+          left: `${percentage}%`
+        };
+        return <div style={commentItemStyle} className="test-thing">{trackComments[key].body}</div>;
+        });
+
+    }
+
+    console.log(trackCommentsArray);
+
+
+
+
+
+
+
+
+
     return (
 
     <li className="track-index-item">
@@ -172,7 +208,10 @@ class UserTrackIndexItem extends React.Component {
 
             <div className="track-comment-div">
               <div className="track-comment-transparent">
-                <div className="track-comment-photobar"></div>
+                <div className="track-comment-photobar">
+                  {trackCommentsArray}
+                  <div class = "test-thing">hello</div>
+                </div>
               </div>
 
 
