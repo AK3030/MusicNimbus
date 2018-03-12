@@ -12,17 +12,9 @@ export default (oldState = {}, action) => {
 
         return merge(oldState, {});
       }
-
       var comments = action.comments;
-      console.log(comments);
-      console.log("old state", oldState);
       var first_comment_idx = Object.keys(comments)[0];
       var track_id = comments[first_comment_idx].track_id;
-
-      console.log("track id", track_id);
-
-      // console.log(track_id);
-      console.log("lkdsjflasjf - - -- - - -");
       return merge({}, oldState, {[track_id]:comments});
     default:
       return oldState;

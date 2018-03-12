@@ -58,6 +58,7 @@ class UserTrackIndexItem extends React.Component {
   componentDidMount() {
 
     this.props.fetchTrackComments(this.props.track.id);
+    this.props.fetchTrackCommentUsers(this.props.track.id);
     // if (this.props.alltracks){
     //   this.props.fetchUser(this.props.track.user_id);
     // }
@@ -142,11 +143,17 @@ class UserTrackIndexItem extends React.Component {
         // console.log("duration", this.state.duration);
         // console.log("percentage thing", (trackComments[key].timestamp/this.state.duration)*100);
         var percentage = (trackComments[key].timestamp/this.state.duration)*100;
+        var commentUser = this.props.users[trackComments[key].user_id];
+        var backgroundImage = commentUser? linkCleaner(commentUser.image):null;
+        console.log("commentuser", backgroundImage);
         let commentItemStyle = {
           color: "green",
-          left: `${percentage}%`
+          left: `${percentage}%`,
+          backgroundImage: `url(${backgroundImage})`,
+          backgroundSize: '100%'
+
         };
-        return <div style={commentItemStyle} className="test-thing">{trackComments[key].body}</div>;
+        return <div style={commentItemStyle} key={key} className="waveform-comment">{" ."}</div>;
         });
 
     }
@@ -193,7 +200,7 @@ class UserTrackIndexItem extends React.Component {
               <div className="track-comment-transparent">
                 <div className="track-comment-photobar">
                   {trackCommentsArray}
-                  <div class = "test-thing">hello</div>
+
                 </div>
               </div>
 
