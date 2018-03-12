@@ -137,6 +137,7 @@ class UserTrackIndexItem extends React.Component {
     var trackComments = this.props.comments[this.props.track.id];
     var trackCommentsArray = null;
     //needs conditional to check for comment authors in addition to trackcomment check
+    var missingUsers = false;
     if (trackComments) {
 
       trackCommentsArray = Object.keys(trackComments).map (key => {
@@ -144,6 +145,9 @@ class UserTrackIndexItem extends React.Component {
         var percentage = (trackComments[key].timestamp/this.state.duration)*100;
         var commentUser = this.props.users[trackComments[key].user_id];
         var backgroundImage = commentUser? linkCleaner(commentUser.image):null;
+        if (commentUser === null) {
+          missingUsers = true;
+        }
         console.log("commentuser", commentUser);
         let commentItemStyle = {
           left: `${percentage}%`,
@@ -162,7 +166,7 @@ class UserTrackIndexItem extends React.Component {
     }
 
 
-
+    console.log("missingUsers", missingUsers);
     return (
 
     <li className="track-index-item">
@@ -202,7 +206,7 @@ class UserTrackIndexItem extends React.Component {
             <div className="track-comment-div">
               <div className="track-comment-transparent">
                 <div className="track-comment-photobar">
-                  {trackCommentsArray}
+                  {missingUsers? null: trackCommentsArray}
 
                 </div>
               </div>
@@ -211,8 +215,8 @@ class UserTrackIndexItem extends React.Component {
             </div>
 
         </div>
+        {this.props.currentUser? <TrackItemCommentFormContainer trackId={this.props.track.id} pos={this.state.pos} duration={this.state.duration}/>:null}
 
-        <TrackItemCommentFormContainer trackId={this.props.track.id} pos={this.state.pos} duration={this.state.duration}/>
 
       </div>
 
