@@ -7,7 +7,7 @@ class TrackItemCommentForm extends React.Component {
     super(props);
     this.state = {
       body: "",
-      timestamp: 20,
+      timestamp: this.props.pos,
       user_id: this.props.currentUser.id,
       track_id: this.props.trackId
     };
@@ -18,7 +18,11 @@ class TrackItemCommentForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    // console.log(this.state);
+
+    this.state.timestamp = this.props.pos;
+    // console.log(this.state.pos);
+    // console.log(this.props.pos);
+    // console.log();
     const comment = Object.assign({}, this.state);
     this.props.createComment({comment});
   }
@@ -30,7 +34,6 @@ class TrackItemCommentForm extends React.Component {
   }
 
   render() {
-    console.log(this.state);
 
     return (
       <div>

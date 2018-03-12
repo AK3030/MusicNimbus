@@ -4,8 +4,7 @@ import EditTrackForm from './edit_track_form';
 
 
 const mapStateToProps = (state, ownProps) => {
-  // console.log(ownProps.match.params);
-  // console.log(state);
+
   return {
     // userId: ownProps.match.params.userId,
     // trackId: ownProps.match.params.trackId,

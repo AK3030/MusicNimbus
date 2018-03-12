@@ -4,7 +4,7 @@ import { fetchAllTracks } from '../actions/track_actions';
 import {fetchAllUsers} from '../actions/user_actions';
 
 const mapStateToProps = (state, ownProps) => {
-    console.log(state.tracks);
+  
   return {
 
     tracks: Object.keys(state.tracks).map(id => state.tracks[id]),

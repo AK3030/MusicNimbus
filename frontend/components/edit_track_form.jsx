@@ -25,7 +25,7 @@ class EditTrackForm extends React.Component {
     var formData = new FormData();
     formData.append("track[track_name]", this.state.track_name);
     this.props.updateTrack(this.props.match.params.trackId,formData);
-    // console.log(this.props.updateTrack);
+
   }
 
   update(field) {

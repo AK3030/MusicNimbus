@@ -56,8 +56,7 @@ class UserTrackIndexItem extends React.Component {
   }
 
   componentDidMount() {
-    console.log("lkjsfasdf", this.props.track.id);
-    console.log(this.props);
+
     this.props.fetchTrackComments(this.props.track.id);
     // if (this.props.alltracks){
     //   this.props.fetchUser(this.props.track.user_id);
@@ -134,22 +133,14 @@ class UserTrackIndexItem extends React.Component {
     var artistLink = `#/users/${this.props.trackartist.id}`;
 
 
-    // console.log("comments", this.props.comments);
-    // if (this.props.comments) {
-    //   var trackComments = this.props.comments[this.props.track.id];
-    //   var trackCommentsArray = Object.keys(trackComments).map (key => trackComments[key].body);
-    //   console.log("trackcomments", trackComments);
-    //
-    // }
-
     var trackComments = this.props.comments[this.props.track.id];
     var trackCommentsArray = null;
     if (trackComments) {
       // console.log(Object.keys(trackComments).map (key => trackComments[key].body));
       trackCommentsArray = Object.keys(trackComments).map (key => {
-        console.log("timestamp", trackComments[key].timestamp);
-        console.log("duration", this.state.duration);
-        console.log("percentage thing", (trackComments[key].timestamp/this.state.duration)*100);
+        // console.log("timestamp", trackComments[key].timestamp);
+        // console.log("duration", this.state.duration);
+        // console.log("percentage thing", (trackComments[key].timestamp/this.state.duration)*100);
         var percentage = (trackComments[key].timestamp/this.state.duration)*100;
         let commentItemStyle = {
           color: "green",
@@ -159,14 +150,6 @@ class UserTrackIndexItem extends React.Component {
         });
 
     }
-
-    console.log(trackCommentsArray);
-
-
-
-
-
-
 
 
 
@@ -219,7 +202,7 @@ class UserTrackIndexItem extends React.Component {
 
         </div>
 
-        <TrackItemCommentFormContainer trackId={this.props.track.id}/>
+        <TrackItemCommentFormContainer trackId={this.props.track.id} pos={this.state.pos} duration={this.state.duration}/>
 
       </div>
 
