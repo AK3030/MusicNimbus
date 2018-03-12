@@ -189,9 +189,28 @@
 .waveform-comment {
   position: absolute;
   left: 50%;
-  width: 15px;
-  height: 15px;
+  width: 10px;
+  height: 10px;
 
+}
+
+.item-comment-text {
+  margin-top: 15px;
+  width: 100px;
+  display: none;
+  overflow: visible;
+  font-size: 12px;
+  border-left: solid 1px #f50;
+  padding-left: 5px;
+}
+
+.item-comment-username {
+  color: #f50;
+  margin-right: 5px;
+}
+
+.waveform-comment:hover .item-comment-text {
+  display: flex;
 }
 
 .grey-comment-container {
