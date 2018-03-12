@@ -20,3 +20,10 @@ export const fetchAllUsers = () => {
     method: "GET"
   });
 };
+
+export const fetchTrackCommentUsers = (trackId) => {
+  return $.ajax({
+    url:`/api/tracks/${trackId}/users`,
+    method: "GET"
+  });
+};

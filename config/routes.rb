@@ -9,8 +9,9 @@ Rails.application.routes.draw do
     end
     resource :session, only: [:create, :destroy]
     resources :tracks, only: [:show, :create, :index, :update] do
+      resources :users, only: [:index]
       resources :comments, only: [:index]
-    end 
+    end
     resources :comments, only: [:create, :index, :show,]
   end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

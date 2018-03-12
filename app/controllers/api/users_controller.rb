@@ -30,12 +30,21 @@ class Api::UsersController < ApplicationController
   end
 
   def index
-    # avoid n+1 queries with includes
-    recent_tracks = Track.includes(:user).last(6)
 
-    @users = []
-    recent_tracks.each do |track|
-      @users << track.user
+    if params[:track_id]
+      tracks_with_comments = Comment.where(track_id: params[:track_id]).includes(:user)
+      @users = []
+      tracks_with_comments.each do |track|
+        @users << track.user
+      end
+    else
+      # avoid n+1 queries with includes
+      recent_tracks = Track.includes(:user).last(6)
+
+      @users = []
+      recent_tracks.each do |track|
+        @users << track.user
+      end
     end
   end
 
