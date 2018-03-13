@@ -148,7 +148,6 @@ class UserTrackIndexItem extends React.Component {
         if (commentUser === null) {
           missingUsers = true;
         }
-        console.log("commentuser", commentUser);
         let commentItemStyle = {
           left: `${percentage}%`,
           backgroundImage: `url(${backgroundImage})`,
@@ -165,8 +164,6 @@ class UserTrackIndexItem extends React.Component {
 
     }
 
-
-    console.log("missingUsers", missingUsers);
     return (
 
     <li className="track-index-item">
