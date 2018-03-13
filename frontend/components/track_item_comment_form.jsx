@@ -20,13 +20,10 @@ class TrackItemCommentForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-
     this.state.timestamp = this.props.pos;
-    // console.log(this.state.pos);
-    // console.log(this.props.pos);
-    // console.log();
     const comment = Object.assign({}, this.state);
     this.props.createComment({comment});
+    this.setState({body: ""});
   }
 
   update(field) {
@@ -49,6 +46,7 @@ class TrackItemCommentForm extends React.Component {
               <input
                 placeholder ="Write a comment"
                 type="text"
+                value={this.state.body}
                 onChange={this.update('body')}
 
               />
