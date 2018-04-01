@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 const NavBar = ({currentUser, logout}) => {
 
   var username = "Log In";
-  var link = `#/`;
+  var link = `#/login`;
   var uploadLink = null;
   var logoutButton = null;
   if (currentUser) {
@@ -13,9 +13,7 @@ const NavBar = ({currentUser, logout}) => {
     link = `#/users/${currentUser.id}`;
     uploadLink = <li><Link to={`/users/${currentUser.id}/uploadSong`}>Upload</Link></li>;
     logoutButton = <li><button id = "logout-nav-button" onClick={logout}>Logout</button></li>;
-
   }
-
 
   return (
     <div>
@@ -30,17 +28,10 @@ const NavBar = ({currentUser, logout}) => {
             <input id="search-box" placeholder="Search"></input>
           </form>
 
-
-
-
-
-
-
           <ul className="header-list">
             <li><a id="upgrade-link" href="https://github.com/AK3030">Github</a></li>
             {logoutButton}
             {uploadLink}
-
 
             <li><a href={link}>{username}</a></li>
           </ul>

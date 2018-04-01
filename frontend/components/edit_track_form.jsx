@@ -7,7 +7,6 @@ class EditTrackForm extends React.Component {
     super(props);
     this.state = {
     track_name: ""
-
     };
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -58,9 +57,6 @@ class EditTrackForm extends React.Component {
                   className="session-input"
                 />
               </label>
-
-
-
             </div>
 
             <div id="session-errors">{this.renderErrors()}</div>

@@ -4,11 +4,8 @@ import SessionForm from './session_form';
 import {withRouter} from 'react-router';
 
 const mapStateToProps = ({errors, currentUser}, ownProps) => {
-  // currentuser doesnt work needs to be deleted!!
-  let loggedin = Boolean(currentUser);
   return {
     errors: errors.session,
-    loggedin
   };
 };
 

@@ -10,9 +10,7 @@ class ProfileDropzone extends React.Component {
       accepted: [],
       rejected: []
     };
-
   }
-
 
   onDrop(accepted, rejected) {
     this.setState({ accepted, rejected });
@@ -31,7 +29,6 @@ class ProfileDropzone extends React.Component {
       reader.readAsBinaryString(g);
     }
   }
-
 
   render() {
     var profileDropzoneStyle = {
@@ -77,8 +74,6 @@ class ProfileDropzone extends React.Component {
       <div>
         <Dropzone accept="image/jpeg, image/png" className="profile-image-dropzone"
           multiple={false} style={profileDropzoneStyle} activeStyle={profileActiveStyle} onDrop={this.onDrop.bind(this)}>
-
-          {/* <p className="dropzone-text">Try dropping some files here, or click to select files to upload.</p>*/}
         </Dropzone>
       </div>
       <aside className="aside">
