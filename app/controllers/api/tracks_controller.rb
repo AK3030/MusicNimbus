@@ -20,7 +20,6 @@ class Api::TracksController < ApplicationController
     user_id = track_params[:user_id]
     @track = Track.new(track_name: track_params[:track_name], audio: audio, image: image, user_id: user_id)
 
-    p @track
     if @track.save
       render :show
     else
@@ -30,24 +29,17 @@ class Api::TracksController < ApplicationController
   end
 
   def update
-    # if params[:user_id] == current_user.id.to_s
-    # p "hello o oo  - -- - -- - -"
-
-    # track_params[:audio] = nil if track_params[:audio]
     @track = Track.find_by(id: params[:id])
-    # p @track.track_name
-    p track_params
+
     if @track.user_id == current_user.id
       if @track.update(track_params)
         render :show
       else
-        p @track.errors.full_messages
         render json: @track.errors.full_messages, status: 401
       end
     else
       render json: ["wrong user"], status: 422
     end
-
   end
 
   def track_params

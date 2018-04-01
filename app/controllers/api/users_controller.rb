@@ -1,6 +1,5 @@
 class Api::UsersController < ApplicationController
   def create
-    p user_params
     @user = User.new(username: user_params[:username], password:user_params[:password], email:user_params[:email])
     if @user.save
       login(@user)
@@ -11,9 +10,7 @@ class Api::UsersController < ApplicationController
   end
 
   def show
-    p params
     @user = User.find_by(id: params[:id])
-
   end
 
   def update
@@ -22,7 +19,6 @@ class Api::UsersController < ApplicationController
       if @user.update(user_params)
         render :show
       else
-        p @user.errors.full_messages
         render json: @user.errors.full_messages, status: 401
       end
     else
