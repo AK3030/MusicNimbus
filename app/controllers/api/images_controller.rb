@@ -5,7 +5,6 @@ class Api::ImagesController < ApplicationController
   end
 
   def create
-    p params
     render json: ["success"]
   end
 
