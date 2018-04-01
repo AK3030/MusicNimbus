@@ -1,7 +1,6 @@
 import React from 'react';
 import TrackIndexItem from './user_track_index_item';
 import UserTrackIndexItemContainer from './user_track_index_item_container';
-// import {Route} from 'react-router-dom';
 
 class AllTrackIndex extends React.Component {
   componentDidMount() {
@@ -11,26 +10,15 @@ class AllTrackIndex extends React.Component {
 
   }
 
-  // componentWillReceiveProps() {
-  //   this.props.fetchAllTracks();
-  //   this.props.fetchAllUsers();
-  //
-  // }
-
-
   render() {
 
     if (!this.props.tracks[1]) {
-      return "hi";
+      return "Loading";
     }
 
     if (Object.keys(this.props.users).length < 2) {
-
-      // this.props.fetchAllUsers();
-      return "Hi";
+      return "Loading";
     }
-
-
 
     return (
       <div className="user-track-index">

@@ -31,8 +31,8 @@ const receiveUsers = users => {
   return {
     type: RECEIVE_USERS,
     users
-  }
-}
+  };
+};
 
 
 export const fetchUser = userId => dispatch => {

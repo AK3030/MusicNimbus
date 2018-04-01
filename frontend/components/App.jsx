@@ -10,7 +10,6 @@ import UserShowContainer from './user_show_container';
 import EditUserFormContainer from './edit_user_form_container';
 import UserTrackIndexContainer from './user_track_index_container';
 import UploadSongFormContainer from './upload_song_form_container';
-// import EditTrackForm from './edit_track_form';
 import EditTrackFormContainer from './edit_track_form_container';
 import Stream from './stream';
 
@@ -23,9 +22,6 @@ const App = () => (
     <Route exact path="/users/:userId/edit" component={UserShowContainer}/>
     <Route exact path="/users/:userId/uploadSong" component={UserShowContainer}/>
     <Route exact path="/stream" component={NavbarContainer}/>
-
-
-
 
     <Switch>
       <Route exact path="/stream" component={Stream}/>
