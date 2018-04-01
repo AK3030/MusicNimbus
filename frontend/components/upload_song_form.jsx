@@ -11,7 +11,6 @@ class UploadSongForm extends React.Component {
       acceptedTrack: null,
     };
     this.handleSubmit = this.handleSubmit.bind(this);
-
   }
 
   imageOnDrop(accepted, rejected) {
@@ -34,21 +33,12 @@ class UploadSongForm extends React.Component {
     e.preventDefault();
 
     var formData = new FormData();
-
-
     formData.append("track[track_name]", this.state.track_name);
     formData.append("track[image]", this.state.acceptedImage);
     formData.append("track[audio]", this.state.acceptedTrack);
     formData.append("track[user_id]", this.props.currentUser.id);
     this.props.uploadTrack(formData);
-
   }
-
-  // handleDemo(e) {
-  //   e.preventDefault();
-  //   const user = {username: "Demo", password: "demopassword123"};
-  //   this.props.processLogin({user});
-  // }
 
   update(field) {
     return e => this.setState({
@@ -92,8 +82,6 @@ class UploadSongForm extends React.Component {
       border: '2px solid black',
     };
 
-
-
     var accepted = this.state.acceptedTrack ? this.state.acceptedTrack.name: "";
     var link = `/users/${this.props.currentUser.id}`;
     return (
@@ -102,7 +90,6 @@ class UploadSongForm extends React.Component {
         <div className="session-form-container">
           <Link to={link} id="exit-button">X</Link>
           <form onSubmit={this.handleSubmit} className="session-form-box">
-
             <div id="form-input-container">
               <label>
                 <input
@@ -114,24 +101,20 @@ class UploadSongForm extends React.Component {
                 />
               </label>
               <br></br>
-
               <br></br>
               <p className="upload-input-titles">Upload Track Image:</p>
-            <Dropzone style={trackImageDropZone} multiple={false} onDrop={this.imageOnDrop.bind(this)}></Dropzone>
-            <br></br>
-              <p className="upload-input-titles">Upload Track Audio: </p>
-            <Dropzone style={trackAudioDropZone} multiple={false} onDrop={this.trackOnDrop.bind(this)}/>
-            <div className="accepted-track">{accepted}</div>
-
+              <Dropzone style={trackImageDropZone} multiple={false} onDrop={this.imageOnDrop.bind(this)}></Dropzone>
+                <br></br>
+                <p className="upload-input-titles">Upload Track Audio: </p>
+              <Dropzone style={trackAudioDropZone} multiple={false} onDrop={this.trackOnDrop.bind(this)}/>
+              <div className="accepted-track">{accepted}</div>
             </div>
-
             <div id="session-errors">{this.renderErrors()}</div>
             <input className="session-form-button" type="submit" value="Upload Track" />
 
           </form>
         </div>
-        <div className="modal-background">
-        </div>
+        <div className="modal-background"></div>
       </div>
   );
   }

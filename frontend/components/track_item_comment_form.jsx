@@ -11,12 +11,8 @@ class TrackItemCommentForm extends React.Component {
       user_id: this.props.currentUser.id,
       track_id: this.props.trackId
     };
-
     this.handleSubmit = this.handleSubmit.bind(this);
-
   }
-
-
 
   handleSubmit(e) {
     e.preventDefault();
@@ -36,28 +32,22 @@ class TrackItemCommentForm extends React.Component {
 
     return (
       <div>
-
-      <div className = "comment-div">
-
-        <div className = "grey-comment-container">
-
-          <form className="comment-form" onSubmit={this.handleSubmit}>
-            <label>
-              <input
-                placeholder ="Write a comment"
-                type="text"
-                value={this.state.body}
-                onChange={this.update('body')}
-
-              />
-            </label>
-          </form>
+        <div className = "comment-div">
+          <div className = "grey-comment-container">
+            <form className="comment-form" onSubmit={this.handleSubmit}>
+              <label>
+                <input
+                  placeholder ="Write a comment"
+                  type="text"
+                  value={this.state.body}
+                  onChange={this.update('body')}
+                />
+              </label>
+            </form>
+          </div>
         </div>
-
-      </div>
       </div>
     );
-
   }
 }
 

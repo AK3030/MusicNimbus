@@ -2,11 +2,8 @@ require('wavesurfer.js');
 
 import React from 'react';
 import linkCleaner from '../util/aws_link_cleaner';
-// import ReactPlayer from 'react-player';
 import conversion from '../util/time_conversion';
-
 import Wavesurfer from 'react-wavesurfer';
-
 import TrackItemCommentForm from './track_item_comment_form';
 import TrackItemCommentFormContainer from './track_item_comment_form_container';
 
@@ -56,13 +53,8 @@ class UserTrackIndexItem extends React.Component {
   }
 
   componentDidMount() {
-
     this.props.fetchTrackComments(this.props.track.id);
     this.props.fetchTrackCommentUsers(this.props.track.id);
-    // if (this.props.alltracks){
-    //   this.props.fetchUser(this.props.track.user_id);
-    // }
-
   }
 
   ref(player) {
@@ -70,20 +62,16 @@ class UserTrackIndexItem extends React.Component {
   }
 
   handlePosChange(e) {
-    // console.log(e.originalArgs[1]);
     this.setState({
       pos: e.originalArgs[0]
     });
   }
 
   handleReady(args) {
-  // call method immediately:
-  this.state.duration = args.wavesurfer.getDuration();
-  this.setState({
-    duration: args.wavesurfer.getDuration()
-  });
-  // … or cache wavesurfer instance:
-  // this.wavesurferInstance = args.wavesurfer;
+    this.state.duration = args.wavesurfer.getDuration();
+    this.setState({
+      duration: args.wavesurfer.getDuration()
+    });
   }
 
   render() {
@@ -97,17 +85,13 @@ class UserTrackIndexItem extends React.Component {
       progressColor: '#FC491E'
     };
     const { url, playing, volume, muted, loop, played, loaded, duration, playbackRate } = this.state;
-    // var playButtonBackground ='url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iOCIgaGVpZ2h0PSIxNCIgdmlld0JveD0iMCAwIDggMTQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHRpdGxlPlBsYXkgMjg8L3RpdGxlPjxwYXRoIGQ9Ik0wIDE0bDEuODQ2LTdMMCAwbDggNy04IDd6IiBmaWxsPSIjRkZGIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiLz48L3N2Zz4=)';
-    // if (playing) {
-    //   playButtonBackground = 'url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iOCIgaGVpZ2h0PSIxMiIgdmlld0JveD0iMCAwIDggMTIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHRpdGxlPlBhdXNlIDI4PC90aXRsZT48cGF0aCBkPSJNNSAwdjEyaDNWMEg1ek0wIDB2MTJoM1YwSDB6IiBmaWxsPSIjRkZGIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiLz48L3N2Zz4=)';
-    // }
+
     var pauseStyle = {
       backgroundRepeat: 'no-repeat',
       backgroundImage: 'url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iOCIgaGVpZ2h0PSIxMiIgdmlld0JveD0iMCAwIDggMTIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHRpdGxlPlBhdXNlIDI4PC90aXRsZT48cGF0aCBkPSJNNSAwdjEyaDNWMEg1ek0wIDB2MTJoM1YwSDB6IiBmaWxsPSIjRkZGIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiLz48L3N2Zz4=)',
       backgroundSize: '35%',
       backgroundPositionX: '12px',
       backgroundPositionY: '8px',
-
     };
 
     var playStyle = {
@@ -136,7 +120,6 @@ class UserTrackIndexItem extends React.Component {
 
     var trackComments = this.props.comments[this.props.track.id];
     var trackCommentsArray = null;
-    //needs conditional to check for comment authors in addition to trackcomment check
     var missingUsers = false;
     if (trackComments) {
 

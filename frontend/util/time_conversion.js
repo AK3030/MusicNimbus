@@ -5,6 +5,6 @@ export default millis => {
   if (seconds < 10) {
     seconds = `0${seconds}`;
   }
-  // return `:${rounded%60}`;
+  
   return `${minutes}:${seconds}`;
 };

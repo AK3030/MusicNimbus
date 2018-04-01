@@ -45,6 +45,7 @@ class UserShow extends React.Component {
       var edit_button = (this.props.currentUser.id == this.props.match.params.userId) ? <a href={editLink}><div className="edit">Edit</div></a> : null;
       var upload_song_button = (this.props.currentUser.id == this.props.match.params.userId) ? <a href={uploadSong}><div className="edit">Upload Song</div></a> : null;
     }
+    
     return (
       <div>
         <div style={userHeaderStyle} id="user-header">
