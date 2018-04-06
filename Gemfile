@@ -50,6 +50,7 @@ group :development, :test do
   gem 'annotate'
   gem 'rspec-rails'
   gem 'factory_girl_rails'
+  gem 'rspec_junit_formatter'
 end
 
 group :test do
