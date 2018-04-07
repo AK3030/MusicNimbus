@@ -57,13 +57,9 @@ diam_image = open('https://i1.sndcdn.com/artworks-vuy08zbeMQZo-0-t500x500.jpg')
 diam_audio = open('https://s3-us-west-1.amazonaws.com/musicnimbus/04+Diamonds+Dancing.mp3')
 Track.create(track_name: 'Future & Drake - Diamonds Dancing', image: diam_image, user: future, audio: diam_audio)
 
-purple_image = open('https://3fybkfrr10x3tgp41p45lr3a-wpengine.netdna-ssl.com/wp-content/uploads/2016/01/future-purple-reign-cover-art.jpg')
-purple_audio = open('https://s3-us-west-1.amazonaws.com/musicnimbus/13+Purple+Reign+%5BProd+By+Metro+Boomin%5D.mp3')
-Track.create(track_name: 'Purple Reign', image: purple_image, user: future, audio: purple_audio)
-
-
-
-
+# purple_image = open('https://3fybkfrr10x3tgp41p45lr3a-wpengine.netdna-ssl.com/wp-content/uploads/2016/01/future-purple-reign-cover-art.jpg')
+# purple_audio = open('https://s3-us-west-1.amazonaws.com/musicnimbus/13+Purple+Reign+%5BProd+By+Metro+Boomin%5D.mp3')
+# Track.create(track_name: 'Purple Reign', image: purple_image, user: future, audio: purple_audio)
 
 flume_image = open('https://i1.sndcdn.com/avatars-000199857182-bmbgeg-t500x500.jpg')
 flume_header_image = open('https://va.sndcdn.com/bg/soundcloud:users:2976616/SoundcloudPropartnerProfile1240x260.jpg')
