@@ -23,11 +23,19 @@ const personalGreeting = (currentUser, logout) => (
 const Greeting= ({currentUser, logout}) => {
   return (
     <div>
-      <div className="header">
-        <div id="orange-banner"></div>
+      <div className = "header-container">
         {currentUser ? personalGreeting(currentUser, logout) : sessionLinks()}
-        <div className = "greeting-title">Connect on Nimbus</div>
-        <div className = "greeting-text">Discover, stream, and share a constantly expanding mix of music from emerging and major artists around the world.</div>
+        <div id="orange-banner"></div>
+        <div className = "carousel">
+          <div className="header1">
+            <div className = "greeting-title">Connect on Nimbus</div>
+            <div className = "greeting-text">Discover, stream, and share a constantly expanding mix of music from emerging and major artists around the world.</div>
+          </div>
+          <div className = "header2">
+
+          </div>
+        </div>
+
       </div>
       <div className="all-track-index">
         <AllTrackIndexContainer/>

@@ -13,21 +13,60 @@ html {
 }
 
 .header-nav {
+  position: absolute;
   height:60px;
-}
-.header {
-  width: 1240px;
+  right: 1%;
+  z-index: 20;
 
-  /* height: 755px; */
+}
+
+.test-title {
+  display: block;
+  position: relative;
+}
+
+.header-container {
+  position: relative;
+  width: 1240px;
   height: 450px;
+  overflow: hidden;
   margin-left: auto;
   margin-right: auto;
-  background-image: url(<%= asset_path '30_OWSLA_live.jpg' %>);
-  background-image: url(https://a-v2.sndcdn.com/assets/images/home/hp_image@2x-ae2160d.jpg);
-
-  background-size: 100%;
-
 }
+
+.header1 {
+  position: relative;
+  display: inline-block;
+  width: 1240px;
+  height: 450px;
+  background-image: url(https://a-v2.sndcdn.com/assets/images/home/hp_image@2x-ae2160d.jpg);
+  background-size: 100%;
+  vertical-align: top;
+}
+
+.header2 {
+  position: relative;
+  display: inline-block;
+  width: 1240px;
+  height: 450px;
+  background-image: url(https://a-v2.sndcdn.com/assets/images/home/hp_image_creator_slide@2x-8925b63.jpg);
+  background-size: 100%;
+}
+
+.carousel {
+  /* display: inline; */
+  height: 450px;
+  width: 300%;
+  background-color: blue;
+  transform: translateX(-33.33%);
+  transition: transform 0.6s ease-in-out 0s;
+}
+
+/* .tester1 {
+  position: relative;
+  display: inline;
+  z-index: 40;
+} */
 
 .session-nav-buttons {
   color: white;
@@ -80,6 +119,7 @@ html {
 }
 
 .greeting-title {
+
   margin-top: 85px;
   text-align: center;
   font-size: 35px;
@@ -87,8 +127,11 @@ html {
 }
 
 .greeting-text {
-  /* width: 400px; */
+
   text-align: center;
   color: white;
   margin-top: 30px;
 }
+
+<div className = "greeting-title">Connect on Nimbus</div>
+<div className = "greeting-text">Discover, stream, and share a constantly expanding mix of music from emerging and major artists around the world.</div>
