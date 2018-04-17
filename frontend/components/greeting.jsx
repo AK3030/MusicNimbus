@@ -20,28 +20,50 @@ const personalGreeting = (currentUser, logout) => (
   </div>
 );
 
-const Greeting= ({currentUser, logout}) => {
-  return (
-    <div>
-      <div className = "header-container">
-        {currentUser ? personalGreeting(currentUser, logout) : sessionLinks()}
-        <div id="orange-banner"></div>
-        <div className = "carousel">
-          <div className="header1">
-            <div className = "greeting-title">Connect on Nimbus</div>
-            <div className = "greeting-text">Discover, stream, and share a constantly expanding mix of music from emerging and major artists around the world.</div>
-          </div>
-          <div className = "header2">
 
+
+class Greeting extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      carouselPos: 1
+    };
+
+  }
+
+  render() {
+
+    return (
+      <div>
+        <div className = "header-container">
+          {this.props.currentUser ? personalGreeting(this.props.currentUser, this.props.logout) : sessionLinks()}
+
+          <div id="orange-banner"></div>
+          <div className = "carousel carousel-transition">
+            <div className="header1">
+              <div className = "greeting-title">Connect on Nimbus</div>
+              <div className = "greeting-text">Discover, stream, and share a constantly expanding mix of music from emerging and major artists around the world.</div>
+            </div>
+            <div className = "header2">
+
+            </div>
           </div>
+          <div className="nav-dots-container">
+            <div className="nav-dots">
+              <div className ="dot-button left-dot"></div>
+              <div className="dot-button right-dot"></div>
+            </div>
+          </div>
+
+
         </div>
+        <div className="all-track-index">
+          <AllTrackIndexContainer/>
+        </div>
+      </div>
+    );
 
-      </div>
-      <div className="all-track-index">
-        <AllTrackIndexContainer/>
-      </div>
-    </div>
-  );
-};
+  }
+}
 
 export default Greeting;

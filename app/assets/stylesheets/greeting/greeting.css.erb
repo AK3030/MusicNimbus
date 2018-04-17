@@ -16,7 +16,7 @@ html {
   position: absolute;
   height:60px;
   right: 1%;
-  z-index: 20;
+  z-index: 1;
 
 }
 
@@ -58,8 +58,13 @@ html {
   height: 450px;
   width: 300%;
   background-color: blue;
-  transform: translateX(-33.33%);
   transition: transform 0.6s ease-in-out 0s;
+
+}
+
+.carousel-transition {
+  transform: translateX(-33.33%);
+
 }
 
 /* .tester1 {
@@ -119,7 +124,6 @@ html {
 }
 
 .greeting-title {
-
   margin-top: 85px;
   text-align: center;
   font-size: 35px;
@@ -133,5 +137,28 @@ html {
   margin-top: 30px;
 }
 
-<div className = "greeting-title">Connect on Nimbus</div>
-<div className = "greeting-text">Discover, stream, and share a constantly expanding mix of music from emerging and major artists around the world.</div>
+.nav-dots-container {
+  position: absolute;
+  display: inline-block;
+  background-color: blue;
+  width: 100%;
+  z-index: 1;
+  bottom: 40px;
+
+}
+
+.nav-dots {
+  display: flex;
+  height: 10px;
+  width: 100px;
+  margin: auto;
+  background-color: green;
+  justify-content: space-between;
+}
+
+.dot-button {
+  height: 10px;
+  width: 10px;
+  background-color: white;
+  border-radius: 50%;
+}
