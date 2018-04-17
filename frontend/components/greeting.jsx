@@ -47,6 +47,10 @@ class Greeting extends React.Component {
       transform: "translateX(-33.33%)"
     };
 
+    const fillInButton = {
+      backgroundColor: "white"
+    };
+
     return (
       <div>
         <div className = "header-container">
@@ -64,8 +68,8 @@ class Greeting extends React.Component {
           </div>
           <div className="nav-dots-container">
             <div className="nav-dots">
-              <div onClick={this.leftButtonClick} className ="dot-button left-dot"></div>
-              <div onClick={this.rightButtonClick} className="dot-button right-dot"></div>
+              <div style = {!this.state.carouselPos ? fillInButton: null} onClick={this.leftButtonClick} className ="dot-button left-dot"></div>
+              <div style = {this.state.carouselPos ? fillInButton: null} onClick={this.rightButtonClick} className="dot-button right-dot"></div>
             </div>
           </div>
 
