@@ -26,12 +26,26 @@ class Greeting extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      carouselPos: 1
+      carouselPos: false
     };
+    this.leftButtonClick = this.leftButtonClick.bind(this);
+    this.rightButtonClick = this.rightButtonClick.bind(this);
+  }
 
+  leftButtonClick() {
+    console.log("left");
+    this.setState({carouselPos:false});
+  }
+
+  rightButtonClick() {
+    console.log("right");
+    this.setState({carouselPos:true});
   }
 
   render() {
+    const transitionStyle = {
+      transform: "translateX(-33.33%)"
+    };
 
     return (
       <div>
@@ -39,7 +53,7 @@ class Greeting extends React.Component {
           {this.props.currentUser ? personalGreeting(this.props.currentUser, this.props.logout) : sessionLinks()}
 
           <div id="orange-banner"></div>
-          <div className = "carousel carousel-transition">
+          <div style = {this.state.carouselPos ? transitionStyle: null} className = "carousel carousel-transition">
             <div className="header1">
               <div className = "greeting-title">Connect on Nimbus</div>
               <div className = "greeting-text">Discover, stream, and share a constantly expanding mix of music from emerging and major artists around the world.</div>
@@ -50,8 +64,8 @@ class Greeting extends React.Component {
           </div>
           <div className="nav-dots-container">
             <div className="nav-dots">
-              <div className ="dot-button left-dot"></div>
-              <div className="dot-button right-dot"></div>
+              <div onClick={this.leftButtonClick} className ="dot-button left-dot"></div>
+              <div onClick={this.rightButtonClick} className="dot-button right-dot"></div>
             </div>
           </div>
 
