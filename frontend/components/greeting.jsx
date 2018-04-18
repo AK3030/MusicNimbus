@@ -26,30 +26,78 @@ class Greeting extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      carouselPos: false
+      carouselPos: 0
     };
     this.leftButtonClick = this.leftButtonClick.bind(this);
     this.rightButtonClick = this.rightButtonClick.bind(this);
+    this.thirdImage = this.thirdImage.bind(this);
+    this.incrementCarousel = this.incrementCarousel.bind(this);
   }
 
   leftButtonClick() {
-    console.log("left");
-    this.setState({carouselPos:false});
+    this.setState({carouselPos:0});
   }
 
   rightButtonClick() {
-    console.log("right");
-    this.setState({carouselPos:true});
+    this.setState({carouselPos:1});
   }
 
+  thirdImage() {
+    this.setState({carouselPos: 2});
+  }
+
+  incrementCarousel() {
+    this.setState({carouselPos: this.state.carouselPos + 1});
+  }
+
+
+
   render() {
+    console.log(this.state.carouselPos);
+    const instantStyle = {
+      transform: "translateX(0%)",
+      transition: "transform 0.6s ease-in-out 0s"
+    };
     const transitionStyle = {
       transform: "translateX(-33.33%)"
+    };
+
+    const secondTransitionStyle = {
+      transform: "translateX(-66.66%)"
     };
 
     const fillInButton = {
       backgroundColor: "white"
     };
+
+    var carouselStyle = null;
+    if (this.state.carouselPos === 1) {
+      carouselStyle = transitionStyle;
+    }
+    else if (this.state.carouselPos === 2) {
+      carouselStyle = secondTransitionStyle;
+    }
+    else if (this.state.carouselPos === 3) {
+      carouselStyle = instantStyle;
+    }
+    else {
+      carouselStyle = null;
+    }
+
+    // window.setTimeout(this.thirdImage, 3000);
+
+    if (this.state.carouselPos === 0) {
+      window.setTimeout(this.rightButtonClick, 4000);
+    }
+    else if (this.state.carouselPos === 1) {
+      window.setTimeout(this.leftButtonClick, 4000);
+    }
+    // else if (this.state.carouselPos === 2) {
+    //   window.setTimeout(this.leftButtonClick, 3000);
+    // }
+    // else if (this.state.carouselPos === 3) {
+    //
+    // }
 
     return (
       <div>
@@ -57,22 +105,24 @@ class Greeting extends React.Component {
           {this.props.currentUser ? personalGreeting(this.props.currentUser, this.props.logout) : sessionLinks()}
 
           <div id="orange-banner"></div>
-          <div style = {this.state.carouselPos ? transitionStyle: null} className = "carousel carousel-transition">
+          <div style = {carouselStyle} className = "carousel carousel-transition">
             <div className="header1">
               <div className = "greeting-title">Connect on Nimbus</div>
               <div className = "greeting-text">Discover, stream, and share a constantly expanding mix of music from emerging and major artists around the world.</div>
             </div>
             <div className = "header2">
-
+            </div>
+            <div className="header1">
+              <div className = "greeting-title">Connect on Nimbus</div>
+              <div className = "greeting-text">Discover, stream, and share a constantly expanding mix of music from emerging and major artists around the world.</div>
             </div>
           </div>
           <div className="nav-dots-container">
             <div className="nav-dots">
-              <div style = {!this.state.carouselPos ? fillInButton: null} onClick={this.leftButtonClick} className ="dot-button left-dot"></div>
-              <div style = {this.state.carouselPos ? fillInButton: null} onClick={this.rightButtonClick} className="dot-button right-dot"></div>
+              <div style = {this.state.carouselPos === 0 || this.state.carouselPos === 2 ? fillInButton: null} onClick={this.leftButtonClick} className ="dot-button left-dot"></div>
+              <div style = {this.state.carouselPos === 1 ? fillInButton: null} onClick={this.rightButtonClick} className="dot-button right-dot"></div>
             </div>
           </div>
-
 
         </div>
         <div className="all-track-index">

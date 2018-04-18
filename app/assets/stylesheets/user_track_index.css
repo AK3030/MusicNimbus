@@ -53,6 +53,7 @@
 
 .waveform {
   z-index: 0;
+  cursor: pointer;
 }
 
 .waveform-line {
@@ -234,5 +235,4 @@
   padding-left: 8px;
   padding-top: 1px;
   border: 1px solid #E5E5E5;
-
 }
