@@ -25,7 +25,7 @@ const NavBar = ({currentUser, logout}) => {
             <li><a id="collection-link" href="#/navbar">Collection</a></li>
           </ul>
           <form id="search-form">
-            <input id="search-box" placeholder="Search"></input>
+            <input id="search-box" placeholder="Search (not yet implemented)"></input>
           </form>
 
           <ul className="header-list">

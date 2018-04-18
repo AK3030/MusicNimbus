@@ -10,8 +10,6 @@ class Stream extends React.Component {
         <nav className="stream-nav">
           <ul className="stream-nav-left">
             <li>Stream</li>
-            <li>Charts</li>
-            <li>Discover</li>
           </ul>
         </nav>
           <AllTrackIndexContainer/>
