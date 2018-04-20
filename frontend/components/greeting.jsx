@@ -51,7 +51,7 @@ class Greeting extends React.Component {
 
   timedBlock() {
     this.blockEvents();
-    window.setTimeout(this.openEvents, 3900);
+    window.setTimeout(this.openEvents, 4900);
   }
 
   leftButtonClick() {
@@ -67,7 +67,7 @@ class Greeting extends React.Component {
   autoLeftWrapper() {
     const num = Math.random();
     this.state.lastEvent = num;
-    window.setTimeout(this.autoLeft.bind(null, num), 4000);
+    window.setTimeout(this.autoLeft.bind(null, num), 5000);
   }
 
   autoLeft(num) {
@@ -79,7 +79,7 @@ class Greeting extends React.Component {
   autoRightWrapper() {
     const num = Math.random();
     this.state.lastEvent = num;
-    window.setTimeout(this.autoRight.bind(null, num), 4000);
+    window.setTimeout(this.autoRight.bind(null, num), 5000);
   }
 
   autoRight(num) {
