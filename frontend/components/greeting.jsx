@@ -26,34 +26,83 @@ class Greeting extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      carouselPos: 0
+      carouselPos: 0,
+      blockEvents: false,
+      lastEvent: null,
     };
     this.leftButtonClick = this.leftButtonClick.bind(this);
     this.rightButtonClick = this.rightButtonClick.bind(this);
-    this.thirdImage = this.thirdImage.bind(this);
-    this.incrementCarousel = this.incrementCarousel.bind(this);
+    // this.thirdImage = this.thirdImage.bind(this);
+    // this.incrementCarousel = this.incrementCarousel.bind(this);
+    this.openEvents = this.openEvents.bind(this);
+    this.blockEvents = this.blockEvents.bind(this);
+    this.autoLeft = this.autoLeft.bind(this);
+    this.autoRight = this.autoRight.bind(this);
+    this.autoLeftWrapper = this.autoLeftWrapper.bind(this);
+  }
+
+  openEvents() {
+    this.setState({blockEvents: false});
+  }
+
+  blockEvents() {
+    this.setState({blockEvents: true});
+  }
+
+  timedBlock() {
+    this.blockEvents();
+    window.setTimeout(this.openEvents, 3900);
   }
 
   leftButtonClick() {
+    this.timedBlock();
     this.setState({carouselPos:0});
   }
 
   rightButtonClick() {
+    this.timedBlock();
     this.setState({carouselPos:1});
   }
 
-  thirdImage() {
-    this.setState({carouselPos: 2});
+  autoLeftWrapper() {
+    const num = Math.random();
+    this.state.lastEvent = num;
+    window.setTimeout(this.autoLeft.bind(null, num), 4000);
   }
 
-  incrementCarousel() {
-    this.setState({carouselPos: this.state.carouselPos + 1});
+  autoLeft(num) {
+    if (num === this.state.lastEvent) {
+      this.setState({carouselPos:0});
+    }
   }
+
+  autoRightWrapper() {
+    const num = Math.random();
+    this.state.lastEvent = num;
+    window.setTimeout(this.autoRight.bind(null, num), 4000);
+  }
+
+  autoRight(num) {
+
+    if (num === this.state.lastEvent) {
+      this.setState({carouselPos:1});
+    }
+
+  }
+
+
+  // thirdImage() {
+  //   this.setState({carouselPos: 2});
+  // }
+
+  // incrementCarousel() {
+  //   this.setState({carouselPos: this.state.carouselPos + 1});
+  // }
 
 
 
   render() {
-    console.log(this.state.carouselPos);
+
     const instantStyle = {
       transform: "translateX(0%)",
       transition: "transform 0.6s ease-in-out 0s"
@@ -86,12 +135,16 @@ class Greeting extends React.Component {
 
     // window.setTimeout(this.thirdImage, 3000);
 
-    if (this.state.carouselPos === 0) {
-      window.setTimeout(this.rightButtonClick, 4000);
+    if (this.state.blockEvents === false) {
+
+      if (this.state.carouselPos === 0) {
+        this.autoRightWrapper();
+      }
+      else if (this.state.carouselPos === 1) {
+        this.autoLeftWrapper();
+      }
     }
-    else if (this.state.carouselPos === 1) {
-      window.setTimeout(this.leftButtonClick, 4000);
-    }
+
     // else if (this.state.carouselPos === 2) {
     //   window.setTimeout(this.leftButtonClick, 3000);
     // }
