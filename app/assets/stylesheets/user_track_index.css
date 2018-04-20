@@ -161,7 +161,7 @@
   float: right;
   margin-top: -15px;
   margin-left: -10px;
-  z-index: 1;
+  z-index: 20;
 }
 
 .track-progress {
