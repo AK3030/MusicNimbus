@@ -164,9 +164,7 @@ class UserTrackIndexItem extends React.Component {
 
         </div>
 
-        <div className="track-item-buttons">
-          {editTrackButton}
-        </div>
+
 
         <div className = "track-progress-div">
 
@@ -198,6 +196,9 @@ class UserTrackIndexItem extends React.Component {
 
         </div>
         {this.props.currentUser? <TrackItemCommentFormContainer trackId={this.props.track.id} pos={this.state.pos} duration={this.state.duration}/>:null}
+        <div className="track-item-buttons">
+          {editTrackButton}
+        </div>
 
 
       </div>

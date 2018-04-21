@@ -25,8 +25,7 @@ const NavBar = ({currentUser, logout}) => {
         <nav className="main-navbar">
           <ul className="header-list">
             <li><a className="navbar-button" id="nimbus-link"href="#/navbar">Nimbus</a></li>
-            <li><a className="navbar-button" id="home-link" href="#/navbar">Home</a></li>
-            <li><a className="navbar-button" id="collection-link" href="#/navbar">Collection</a></li>
+
           </ul>
           <form id="search-form">
             <input id="search-box" placeholder="Search (not yet implemented)"></input>
@@ -57,3 +56,6 @@ const NavBar = ({currentUser, logout}) => {
 };
 
 export default NavBar;
+
+// <li><a className="navbar-button" id="home-link" href="#/navbar">Home</a></li>
+// <li><a className="navbar-button" id="collection-link" href="#/navbar">Collection</a></li>
