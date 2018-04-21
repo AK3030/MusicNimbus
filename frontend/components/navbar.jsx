@@ -1,18 +1,22 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import linkCleaner from '../util/aws_link_cleaner';
 
 
 const NavBar = ({currentUser, logout}) => {
+
 
   var username = "Log In";
   var link = `#/login`;
   var uploadLink = null;
   var logoutButton = null;
+  var miniImage = null;
   if (currentUser) {
-    username = currentUser.username;
+    username = <div id="navbar-user-text">{currentUser.username}</div>;
     link = `#/users/${currentUser.id}`;
     uploadLink = <li><Link to={`/users/${currentUser.id}/uploadSong`} className="navbar-button">Upload</Link></li>;
     logoutButton = <li><button className="navbar-button" id = "logout-nav-button" onClick={logout}>Logout</button></li>;
+    miniImage = <img src={linkCleaner(currentUser.header_image)} className="user-image-mini"></img>;
   }
 
   return (
@@ -33,7 +37,17 @@ const NavBar = ({currentUser, logout}) => {
             {logoutButton}
             {uploadLink}
 
-            <li><a href={link} className="navbar-button">{username}</a></li>
+            <li className = "navbar-user">
+
+
+              <a href={link} className="navbar-button">
+                {miniImage}
+                {username}
+
+              </a>
+
+            </li>
+
           </ul>
         </nav>
       </header>
