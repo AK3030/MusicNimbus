@@ -16,7 +16,7 @@ const NavBar = ({currentUser, logout}) => {
     link = `#/users/${currentUser.id}`;
     uploadLink = <li><Link to={`/users/${currentUser.id}/uploadSong`} className="navbar-button">Upload</Link></li>;
     logoutButton = <li><button className="navbar-button" id = "logout-nav-button" onClick={logout}>Logout</button></li>;
-    miniImage = <img src={linkCleaner(currentUser.header_image)} className="user-image-mini"></img>;
+    miniImage = <img src={linkCleaner(currentUser.image)} className="user-image-mini"></img>;
   }
 
   return (
