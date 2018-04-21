@@ -125,6 +125,10 @@ body {
 
 }
 
+.edit:hover {
+  border-color: rgb(209, 209, 209);
+}
+
 .edit::before {
   display: inline-block;
   content: " ";

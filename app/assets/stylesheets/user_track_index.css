@@ -107,6 +107,10 @@
 
 }
 
+.edit-track-item:hover {
+  border-color: rgb(186, 186, 186);
+}
+
 .edit-track-item::before {
   display: inline-block;
   content: " ";
