@@ -11,8 +11,8 @@ const NavBar = ({currentUser, logout}) => {
   if (currentUser) {
     username = currentUser.username;
     link = `#/users/${currentUser.id}`;
-    uploadLink = <li><Link to={`/users/${currentUser.id}/uploadSong`}>Upload</Link></li>;
-    logoutButton = <li><button id = "logout-nav-button" onClick={logout}>Logout</button></li>;
+    uploadLink = <li><Link to={`/users/${currentUser.id}/uploadSong`} className="navbar-button">Upload</Link></li>;
+    logoutButton = <li><button className="navbar-button" id = "logout-nav-button" onClick={logout}>Logout</button></li>;
   }
 
   return (
@@ -20,9 +20,9 @@ const NavBar = ({currentUser, logout}) => {
       <header className="main-header">
         <nav className="main-navbar">
           <ul className="header-list">
-            <li><a id="nimbus-link"href="#/navbar">Nimbus</a></li>
-            <li><a id="home-link" href="#/navbar">Home</a></li>
-            <li><a id="collection-link" href="#/navbar">Collection</a></li>
+            <li><a className="navbar-button" id="nimbus-link"href="#/navbar">Nimbus</a></li>
+            <li><a className="navbar-button" id="home-link" href="#/navbar">Home</a></li>
+            <li><a className="navbar-button" id="collection-link" href="#/navbar">Collection</a></li>
           </ul>
           <form id="search-form">
             <input id="search-box" placeholder="Search (not yet implemented)"></input>
@@ -33,7 +33,7 @@ const NavBar = ({currentUser, logout}) => {
             {logoutButton}
             {uploadLink}
 
-            <li><a href={link}>{username}</a></li>
+            <li><a href={link} className="navbar-button">{username}</a></li>
           </ul>
         </nav>
       </header>

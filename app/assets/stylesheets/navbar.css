@@ -58,10 +58,18 @@
   color: #f50;
 }
 
+#upgrade-link:hover {
+  color: #f70;
+}
+
 #nimbus-link, #home-link, #collection-link {
   border-right: 1px solid black;
 }
 
 #nimbus-link {
   border-left:1px solid black;
+}
+
+.navbar-button:hover {
+  color: white;
 }
