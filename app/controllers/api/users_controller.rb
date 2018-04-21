@@ -27,8 +27,13 @@ class Api::UsersController < ApplicationController
   end
 
   def index
-
-    if params[:track_id]
+    if params[:query]
+      searched_users = User.user_search(params[:query])
+      @users = []
+      searched_users.each do |user|
+        @users << user
+      end
+    elsif params[:track_id]
       tracks_with_comments = Comment.where(track_id: params[:track_id]).includes(:user)
       @users = []
       tracks_with_comments.each do |track|

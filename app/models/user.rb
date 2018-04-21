@@ -52,6 +52,10 @@ class User < ApplicationRecord
     BCrypt::Password.new(self.password_digest).is_password?(password)
   end
 
+  def self.user_search(query)
+    User.where('users.username LIKE ?', "%#{query}%")
+  end
+
   def generate_session_token
     SecureRandom.urlsafe_base64
   end

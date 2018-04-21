@@ -13,7 +13,10 @@ Rails.application.routes.draw do
       resources :comments, only: [:index]
     end
     resources :comments, only: [:create, :index, :show,]
+    get 'users/search/:query', to:'users#index'
   end
+
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
 end
