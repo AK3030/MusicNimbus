@@ -1,6 +1,7 @@
 .search-users {
   background-color: black;
   width: 487px;
+  height: 13px;
 }
 
 .search-users:hover {
@@ -11,4 +12,21 @@
   margin-left: -5px;
   position: absolute;
   z-index: 5;
+}
+
+.search-result-image {
+  margin-top: -5px;
+  margin-right: 10px;
+  height: 23px;
+  width: 23px;
+  border-radius: 50%;
+  display: inline-block;
+  background-size: 100%;
+}
+
+
+.search-result-text {
+  display: inline-block;
+  margin-top: -2px;
+  vertical-align: top;
 }

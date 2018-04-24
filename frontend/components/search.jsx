@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import onClickOutside from 'react-onclickoutside';
+import linkCleaner from '../util/aws_link_cleaner';
 
 class Search extends React.Component {
   constructor(props) {
@@ -14,12 +15,10 @@ class Search extends React.Component {
   }
 
   handleClickOutside() {
-    console.log('onClickOutside() method called');
     this.setState({listHidden:true});
   }
 
   makeVisible() {
-    console.log('clicked inside');
     this.setState({listHidden:false});
   }
 
@@ -38,8 +37,6 @@ class Search extends React.Component {
   render() {
     var arr = [];
     var userList = this.state.query ? this.props.searchUsers: {};
-
-    console.log(React.version);
     var hiddenStyle = null;
 
     if (this.state.listHidden === true) {
@@ -66,7 +63,10 @@ class Search extends React.Component {
             {
             Object.keys(userList).map(key => {
               return <li  key= {userList[key].id}>
-                <Link className="search-users" to={`/users/${userList[key].id}`}>{userList[key].username}</Link>
+                <Link className="search-users" to={`/users/${userList[key].id}`}>
+                  <img className ="search-result-image"src={linkCleaner(userList[key].image)}></img>
+                  <div className ="search-result-text">{userList[key].username}</div>
+                </Link>
 
               </li>;
             })
@@ -80,5 +80,3 @@ class Search extends React.Component {
 }
 
 export default onClickOutside(Search);
-
-// export default Search;

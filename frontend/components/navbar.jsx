@@ -57,6 +57,3 @@ const NavBar = ({currentUser, logout}) => {
 };
 
 export default NavBar;
-
-// <li><a className="navbar-button" id="home-link" href="#/navbar">Home</a></li>
-// <li><a className="navbar-button" id="collection-link" href="#/navbar">Collection</a></li>
