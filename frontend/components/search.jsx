@@ -1,19 +1,28 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import onClickOutside from 'react-onclickoutside';
 
 class Search extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      query: ""
+      query: "",
+      listHidden: false
     };
     this.update = this.update.bind(this);
+    this.makeVisible = this.makeVisible.bind(this);
   }
 
-  // componentDidMount() {
-  //   console.log("asldkfjasldfj");
-  //   this.props.fetchSearchUsers(this.state.query);
-  // }
+  handleClickOutside() {
+    console.log('onClickOutside() method called');
+    this.setState({listHidden:true});
+  }
+
+  makeVisible() {
+    console.log('clicked inside');
+    this.setState({listHidden:false});
+  }
+
 
   update(field) {
     return e => {
@@ -30,8 +39,18 @@ class Search extends React.Component {
     var arr = [];
     var userList = this.state.query ? this.props.searchUsers: {};
 
+    console.log(React.version);
+    var hiddenStyle = null;
+
+    if (this.state.listHidden === true) {
+      hiddenStyle = {display:"none"};
+    }
+    else {
+      hiddenStyle = null;
+    }
+
     return (
-      <div className="all-search">
+      <div className="all-search" onClick={this.makeVisible}>
         <form id="search-form">
           <input
 
@@ -43,7 +62,7 @@ class Search extends React.Component {
         </form>
         <div>
 
-          <ul className = "search-list">
+          <ul className = "search-list" style={hiddenStyle}>
             {
             Object.keys(userList).map(key => {
               return <li  key= {userList[key].id}>
@@ -60,4 +79,6 @@ class Search extends React.Component {
   }
 }
 
-export default Search;
+export default onClickOutside(Search);
+
+// export default Search;

@@ -53,7 +53,7 @@ class User < ApplicationRecord
   end
 
   def self.user_search(query)
-    User.where('users.username LIKE ?', "%#{query}%")
+    User.where('LOWER(users.username) LIKE ?', "%#{query}%")
   end
 
   def generate_session_token
