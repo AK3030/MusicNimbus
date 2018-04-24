@@ -1,0 +1,14 @@
+.search-users {
+  background-color: black;
+  width: 487px;
+}
+
+.search-users:hover {
+  background-color: #333;
+}
+
+.search-list {
+  margin-left: -5px;
+  position: absolute;
+  z-index: 5;
+}

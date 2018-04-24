@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import linkCleaner from '../util/aws_link_cleaner';
+import Search from './search';
+import SearchContainer from './search_container';
 
 
 const NavBar = ({currentUser, logout}) => {
@@ -20,6 +22,7 @@ const NavBar = ({currentUser, logout}) => {
   }
 
   return (
+
     <div>
       <header className="main-header">
         <nav className="main-navbar">
@@ -27,9 +30,7 @@ const NavBar = ({currentUser, logout}) => {
             <li><a className="navbar-button" id="nimbus-link"href="#/navbar">Nimbus</a></li>
 
           </ul>
-          <form id="search-form">
-            <input id="search-box" placeholder="Search (not yet implemented)"></input>
-          </form>
+          <SearchContainer />
 
           <ul className="header-list">
             <li><a id="upgrade-link" href="https://github.com/AK3030">Github</a></li>
