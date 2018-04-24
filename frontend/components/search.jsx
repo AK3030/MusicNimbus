@@ -36,7 +36,7 @@ class Search extends React.Component {
           <input
 
             id="search-box"
-            placeholder="Search (not yet implemented)"
+            placeholder="User Search"
             onChange={this.update('query')}
             autoComplete="off"
           />
