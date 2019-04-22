@@ -8,7 +8,7 @@ const sessionLinks = () => (
       <Link id ="signup" className="session-nav-buttons" to="/signup">Create account</Link>
       <Link id ="signin" className="session-nav-buttons" to="/login">Sign in</Link>
     </nav>
-    <h2 className="welcome">Connect On Nimbus test</h2>
+    <h2 className="welcome">Connect On Nimbus testaflsj</h2>
     <div className="background"></div>
   </div>
 );
