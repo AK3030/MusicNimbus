@@ -27,7 +27,7 @@ class Api::UsersController < ApplicationController
   end
 
   def index
-    p " - - -- - - -- - -"
+    p " hmm"
     p params
     if params[:query]
       searched_users = User.user_search(params[:query])
