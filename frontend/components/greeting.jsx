@@ -160,7 +160,7 @@ class Greeting extends React.Component {
           <div id="orange-banner"></div>
           <div style = {carouselStyle} className = "carousel carousel-transition">
             <div className="header1">
-              <div className = "greeting-title">Connect on Nimbus test </div>
+              <div className = "greeting-title">Connect on Nimbus</div>
               <div className = "greeting-text">Discover, stream, and share a constantly expanding mix of music from emerging and major artists around the world.</div>
             </div>
             <div className = "header2">
@@ -168,7 +168,7 @@ class Greeting extends React.Component {
               <div className = "greeting-text">Upload your first track and begin your journey. Nimbus gives you space to create, find your fans, and connect with other artists.</div>
             </div>
             <div className="header1">
-              <div className = "greeting-title">Connect on Nimbus test</div>
+              <div className = "greeting-title">Connect on Nimbus</div>
               <div className = "greeting-text">Discover, stream, and share a constantly expanding mix of music from emerging and major artists around the world.</div>
             </div>
           </div>
