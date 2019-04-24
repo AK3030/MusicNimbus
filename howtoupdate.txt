@@ -1,0 +1,6 @@
+to edit project from git: 
+- clone project
+- add heroku remote
+- make changes and add/commit them
+- rake assets:precompile RAILS_ENV=production
+- git push heroku master
