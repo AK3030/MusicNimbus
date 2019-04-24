@@ -27,18 +27,27 @@ html {
 
 .header-container {
   position: relative;
-  width: 1240px;
-  height: 450px;
+  width: 100%;
+  height: 36vw;
   overflow: hidden;
   margin-left: auto;
   margin-right: auto;
 }
 
+.greeting-text-container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-right: 40px;
+  padding-left: 40px;
+}
+
 .header1 {
   position: relative;
   display: inline-block;
-  width: 1240px;
-  height: 450px;
+  width: calc(100%/3);
+  height: 36vw;
   background-image: url(https://a-v2.sndcdn.com/assets/images/home/hp_image@2x-ae2160d.jpg);
   background-size: 100%;
   vertical-align: top;
@@ -47,8 +56,8 @@ html {
 .header2 {
   position: relative;
   display: inline-block;
-  width: 1240px;
-  height: 450px;
+  width: calc(100%/3);
+  height: 36vw;
   background-image: url(https://a-v2.sndcdn.com/assets/images/home/hp_image_creator_slide@2x-8925b63.jpg);
   background-size: 100%;
 }
@@ -82,7 +91,6 @@ html {
 }
 
 .greeting-title {
-  margin-top: 150px;
   text-align: center;
   font-size: 35px;
   color: white;
